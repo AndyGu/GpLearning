@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android" >
+    
+    <data>
+        <variable
+            name="newsModel"
+            type="com.bard.gplearning.mvvm.newslist.titleview.TitleViewViewModel" />
+
+        <import type="android.view.View"/>
+        <import type="android.text.TextUtils"/>
+         <import type="androidx.databinding.ObservableField"/>
+    </data>
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:animateLayoutChanges="true"
+        android:orientation="vertical">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="15dp"
+            android:ellipsize="end"
+            android:maxLines="2"
+            android:gravity="center_vertical"
+            android:background="#999999"
+            android:textSize="16sp"
+            android:text="@{newsModel.title}"/>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1px"
+            android:background="#303030"/>
+    </LinearLayout>
+</layout>
+
+
+
+

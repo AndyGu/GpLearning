@@ -1,0 +1,157 @@
+[
+{
+  "directory": "/Users/penggu/workplace/github/GPLearning/app/.cxx/cmake/debug/arm64-v8a",
+  "command": "/Users/penggu/Library/Android/sdk/ndk-bundle/toolchains/llvm/prebuilt/darwin-x86_64/bin/clang++ --target=aarch64-none-linux-android21 --gcc-toolchain=/Users/penggu/Library/Android/sdk/ndk-bundle/toolchains/llvm/prebuilt/darwin-x86_64 --sysroot=/Users/penggu/Library/Android/sdk/ndk-bundle/toolchains/llvm/prebuilt/darwin-x86_64/sysroot  -Dnative_lib_EXPORTS -I/Users/penggu/workplace/github/GPLearning/app/src/main/cpp/include  -g -DANDROID -fdata-sections -ffunction-sections -funwind-tables -fstack-protector-strong -no-canonical-prefixes -fno-addrsig -Wa,--noexecstack -Wformat -Werror=format-security   -O0 -fno-limit-debug-info -fno-experimental-isel  -fPIC   -o CMakeFiles/native-lib.dir/native-lib.cpp.o -c /Users/penggu/workplace/github/GPLearning/app/src/main/cpp/native-lib.cpp",
+  "file": "/Users/penggu/workplace/github/GPLearning/app/src/main/cpp/native-lib.cpp"
+},
+
+{
+  "directory": "/Users/penggu/workplace/github/GPLearning/app/.cxx/cmake/debug/arm64-v8a",
+  "command": "/Users/penggu/Library/Android/sdk/ndk-bundle/toolchains/llvm/prebuilt/darwin-x86_64/bin/clang++ --target=aarch64-none-linux-android21 --gcc-toolchain=/Users/penggu/Library/Android/sdk/ndk-bundle/toolchains/llvm/prebuilt/darwin-x86_64 --sysroot=/Users/penggu/Library/Android/sdk/ndk-bundle/toolchains/llvm/prebuilt/darwin-x86_64/sysroot  -Dnative_lib_EXPORTS -I/Users/penggu/workplace/github/GPLearning/app/src/main/cpp/include  -g -DANDROID -fdata-sections -ffunction-sections -funwind-tables -fstack-protector-strong -no-canonical-prefixes -fno-addrsig -Wa,--noexecstack -Wformat -Werror=format-security   -O0 -fno-limit-debug-info -fno-experimental-isel  -fPIC   -o CMakeFiles/native-lib.dir/utils.cpp.o -c /Users/penggu/workplace/github/GPLearning/app/src/main/cpp/utils.cpp",
+  "file": "/Users/penggu/workplace/github/GPLearning/app/src/main/cpp/utils.cpp"
+},
+
+{
+  "directory": "/Users/penggu/workplace/github/GPLearning/app/.cxx/cmake/debug/arm64-v8a",
+  "command": "/Users/penggu/Library/Android/sdk/ndk-bundle/toolchains/llvm/prebuilt/darwin-x86_64/bin/clang --target=aarch64-none-linux-android21 --gcc-toolchain=/Users/penggu/Library/Android/sdk/ndk-bundle/toolchains/llvm/prebuilt/darwin-x86_64 --sysroot=/Users/penggu/Library/Android/sdk/ndk-bundle/toolchains/llvm/prebuilt/darwin-x86_64/sysroot -Dnative_lib_EXPORTS -I/Users/penggu/workplace/github/GPLearning/app/src/main/cpp/include  -g -DANDROID -fdata-sections -ffunction-sections -funwind-tables -fstack-protector-strong -no-canonical-prefixes -fno-addrsig -Wa,--noexecstack -Wformat -Werror=format-security  -O0 -fno-limit-debug-info -fno-experimental-isel  -fPIC   -o CMakeFiles/native-lib.dir/bspatch.c.o   -c /Users/penggu/workplace/github/GPLearning/app/src/main/cpp/bspatch.c",
+  "file": "/Users/penggu/workplace/github/GPLearning/app/src/main/cpp/bspatch.c"
+},
+
+{
+  "directory": "/Users/penggu/workplace/github/GPLearning/app/.cxx/cmake/debug/arm64-v8a",
+  "command": "/Users/penggu/Library/Android/sdk/ndk-bundle/toolchains/llvm/prebuilt/darwin-x86_64/bin/clang --target=aarch64-none-linux-android21 --gcc-toolchain=/Users/penggu/Library/Android/sdk/ndk-bundle/toolchains/llvm/prebuilt/darwin-x86_64 --sysroot=/Users/penggu/Library/Android/sdk/ndk-bundle/toolchains/llvm/prebuilt/darwin-x86_64/sysroot -Dnative_lib_EXPORTS -I/Users/penggu/workplace/github/GPLearning/app/src/main/cpp/include  -g -DANDROID -fdata-sections -ffunction-sections -funwind-tables -fstack-protector-strong -no-canonical-prefixes -fno-addrsig -Wa,--noexecstack -Wformat -Werror=format-security  -O0 -fno-limit-debug-info -fno-experimental-isel  -fPIC   -o CMakeFiles/native-lib.dir/bzip/blocksort.c.o   -c /Users/penggu/workplace/github/GPLearning/app/src/main/cpp/bzip/blocksort.c",
+  "file": "/Users/penggu/workplace/github/GPLearning/app/src/main/cpp/bzip/blocksort.c"
+},
+
+{
+  "directory": "/Users/penggu/workplace/github/GPLearning/app/.cxx/cmake/debug/arm64-v8a",
+  "command": "/Users/penggu/Library/Android/sdk/ndk-bundle/toolchains/llvm/prebuilt/darwin-x86_64/bin/clang --target=aarch64-none-linux-android21 --gcc-toolchain=/Users/penggu/Library/Android/sdk/ndk-bundle/toolchains/llvm/prebuilt/darwin-x86_64 --sysroot=/Users/penggu/Library/Android/sdk/ndk-bundle/toolchains/llvm/prebuilt/darwin-x86_64/sysroot -Dnative_lib_EXPORTS -I/Users/penggu/workplace/github/GPLearning/app/src/main/cpp/include  -g -DANDROID -fdata-sections -ffunction-sections -funwind-tables -fstack-protector-strong -no-canonical-prefixes -fno-addrsig -Wa,--noexecstack -Wformat -Werror=format-security  -O0 -fno-limit-debug-info -fno-experimental-isel  -fPIC   -o CMakeFiles/native-lib.dir/bzip/bzlib.c.o   -c /Users/penggu/workplace/github/GPLearning/app/src/main/cpp/bzip/bzlib.c",
+  "file": "/Users/penggu/workplace/github/GPLearning/app/src/main/cpp/bzip/bzlib.c"
+},
+
+{
+  "directory": "/Users/penggu/workplace/github/GPLearning/app/.cxx/cmake/debug/arm64-v8a",
+  "command": "/Users/penggu/Library/Android/sdk/ndk-bundle/toolchains/llvm/prebuilt/darwin-x86_64/bin/clang --target=aarch64-none-linux-android21 --gcc-toolchain=/Users/penggu/Library/Android/sdk/ndk-bundle/toolchains/llvm/prebuilt/darwin-x86_64 --sysroot=/Users/penggu/Library/Android/sdk/ndk-bundle/toolchains/llvm/prebuilt/darwin-x86_64/sysroot -Dnative_lib_EXPORTS -I/Users/penggu/workplace/github/GPLearning/app/src/main/cpp/include  -g -DANDROID -fdata-sections -ffunction-sections -funwind-tables -fstack-protector-strong -no-canonical-prefixes -fno-addrsig -Wa,--noexecstack -Wformat -Werror=format-security  -O0 -fno-limit-debug-info -fno-experimental-isel  -fPIC   -o CMakeFiles/native-lib.dir/bzip/compress.c.o   -c /Users/penggu/workplace/github/GPLearning/app/src/main/cpp/bzip/compress.c",
+  "file": "/Users/penggu/workplace/github/GPLearning/app/src/main/cpp/bzip/compress.c"
+},
+
+{
+  "directory": "/Users/penggu/workplace/github/GPLearning/app/.cxx/cmake/debug/arm64-v8a",
+  "command": "/Users/penggu/Library/Android/sdk/ndk-bundle/toolchains/llvm/prebuilt/darwin-x86_64/bin/clang --target=aarch64-none-linux-android21 --gcc-toolchain=/Users/penggu/Library/Android/sdk/ndk-bundle/toolchains/llvm/prebuilt/darwin-x86_64 --sysroot=/Users/penggu/Library/Android/sdk/ndk-bundle/toolchains/llvm/prebuilt/darwin-x86_64/sysroot -Dnative_lib_EXPORTS -I/Users/penggu/workplace/github/GPLearning/app/src/main/cpp/include  -g -DANDROID -fdata-sections -ffunction-sections -funwind-tables -fstack-protector-strong -no-canonical-prefixes -fno-addrsig -Wa,--noexecstack -Wformat -Werror=format-security  -O0 -fno-limit-debug-info -fno-experimental-isel  -fPIC   -o CMakeFiles/native-lib.dir/bzip/crctable.c.o   -c /Users/penggu/workplace/github/GPLearning/app/src/main/cpp/bzip/crctable.c",
+  "file": "/Users/penggu/workplace/github/GPLearning/app/src/main/cpp/bzip/crctable.c"
+},
+
+{
+  "directory": "/Users/penggu/workplace/github/GPLearning/app/.cxx/cmake/debug/arm64-v8a",
+  "command": "/Users/penggu/Library/Android/sdk/ndk-bundle/toolchains/llvm/prebuilt/darwin-x86_64/bin/clang --target=aarch64-none-linux-android21 --gcc-toolchain=/Users/penggu/Library/Android/sdk/ndk-bundle/toolchains/llvm/prebuilt/darwin-x86_64 --sysroot=/Users/penggu/Library/Android/sdk/ndk-bundle/toolchains/llvm/prebuilt/darwin-x86_64/sysroot -Dnative_lib_EXPORTS -I/Users/penggu/workplace/github/GPLearning/app/src/main/cpp/include  -g -DANDROID -fdata-sections -ffunction-sections -funwind-tables -fstack-protector-strong -no-canonical-prefixes -fno-addrsig -Wa,--noexecstack -Wformat -Werror=format-security  -O0 -fno-limit-debug-info -fno-experimental-isel  -fPIC   -o CMakeFiles/native-lib.dir/bzip/decompress.c.o   -c /Users/penggu/workplace/github/GPLearning/app/src/main/cpp/bzip/decompress.c",
+  "file": "/Users/penggu/workplace/github/GPLearning/app/src/main/cpp/bzip/decompress.c"
+},
+
+{
+  "directory": "/Users/penggu/workplace/github/GPLearning/app/.cxx/cmake/debug/arm64-v8a",
+  "command": "/Users/penggu/Library/Android/sdk/ndk-bundle/toolchains/llvm/prebuilt/darwin-x86_64/bin/clang --target=aarch64-none-linux-android21 --gcc-toolchain=/Users/penggu/Library/Android/sdk/ndk-bundle/toolchains/llvm/prebuilt/darwin-x86_64 --sysroot=/Users/penggu/Library/Android/sdk/ndk-bundle/toolchains/llvm/prebuilt/darwin-x86_64/sysroot -Dnative_lib_EXPORTS -I/Users/penggu/workplace/github/GPLearning/app/src/main/cpp/include  -g -DANDROID -fdata-sections -ffunction-sections -funwind-tables -fstack-protector-strong -no-canonical-prefixes -fno-addrsig -Wa,--noexecstack -Wformat -Werror=format-security  -O0 -fno-limit-debug-info -fno-experimental-isel  -fPIC   -o CMakeFiles/native-lib.dir/bzip/huffman.c.o   -c /Users/penggu/workplace/github/GPLearning/app/src/main/cpp/bzip/huffman.c",
+  "file": "/Users/penggu/workplace/github/GPLearning/app/src/main/cpp/bzip/huffman.c"
+},
+
+{
+  "directory": "/Users/penggu/workplace/github/GPLearning/app/.cxx/cmake/debug/arm64-v8a",
+  "command": "/Users/penggu/Library/Android/sdk/ndk-bundle/toolchains/llvm/prebuilt/darwin-x86_64/bin/clang --target=aarch64-none-linux-android21 --gcc-toolchain=/Users/penggu/Library/Android/sdk/ndk-bundle/toolchains/llvm/prebuilt/darwin-x86_64 --sysroot=/Users/penggu/Library/Android/sdk/ndk-bundle/toolchains/llvm/prebuilt/darwin-x86_64/sysroot -Dnative_lib_EXPORTS -I/Users/penggu/workplace/github/GPLearning/app/src/main/cpp/include  -g -DANDROID -fdata-sections -ffunction-sections -funwind-tables -fstack-protector-strong -no-canonical-prefixes -fno-addrsig -Wa,--noexecstack -Wformat -Werror=format-security  -O0 -fno-limit-debug-info -fno-experimental-isel  -fPIC   -o CMakeFiles/native-lib.dir/bzip/randtable.c.o   -c /Users/penggu/workplace/github/GPLearning/app/src/main/cpp/bzip/randtable.c",
+  "file": "/Users/penggu/workplace/github/GPLearning/app/src/main/cpp/bzip/randtable.c"
+},
+
+{
+  "directory": "/Users/penggu/workplace/github/GPLearning/app/.cxx/cmake/debug/arm64-v8a",
+  "command": "/Users/penggu/Library/Android/sdk/ndk-bundle/toolchains/llvm/prebuilt/darwin-x86_64/bin/clang --target=aarch64-none-linux-android21 --gcc-toolchain=/Users/penggu/Library/Android/sdk/ndk-bundle/toolchains/llvm/prebuilt/darwin-x86_64 --sysroot=/Users/penggu/Library/Android/sdk/ndk-bundle/toolchains/llvm/prebuilt/darwin-x86_64/sysroot -Dnative_lib_EXPORTS -I/Users/penggu/workplace/github/GPLearning/app/src/main/cpp/include  -g -DANDROID -fdata-sections -ffunction-sections -funwind-tables -fstack-protector-strong -no-canonical-prefixes -fno-addrsig -Wa,--noexecstack -Wformat -Werror=format-security  -O0 -fno-limit-debug-info -fno-experimental-isel  -fPIC   -o CMakeFiles/native-lib.dir/gif/bitmap.c.o   -c /Users/penggu/workplace/github/GPLearning/app/src/main/cpp/gif/bitmap.c",
+  "file": "/Users/penggu/workplace/github/GPLearning/app/src/main/cpp/gif/bitmap.c"
+},
+
+{
+  "directory": "/Users/penggu/workplace/github/GPLearning/app/.cxx/cmake/debug/arm64-v8a",
+  "command": "/Users/penggu/Library/Android/sdk/ndk-bundle/toolchains/llvm/prebuilt/darwin-x86_64/bin/clang --target=aarch64-none-linux-android21 --gcc-toolchain=/Users/penggu/Library/Android/sdk/ndk-bundle/toolchains/llvm/prebuilt/darwin-x86_64 --sysroot=/Users/penggu/Library/Android/sdk/ndk-bundle/toolchains/llvm/prebuilt/darwin-x86_64/sysroot -Dnative_lib_EXPORTS -I/Users/penggu/workplace/github/GPLearning/app/src/main/cpp/include  -g -DANDROID -fdata-sections -ffunction-sections -funwind-tables -fstack-protector-strong -no-canonical-prefixes -fno-addrsig -Wa,--noexecstack -Wformat -Werror=format-security  -O0 -fno-limit-debug-info -fno-experimental-isel  -fPIC   -o CMakeFiles/native-lib.dir/gif/control.c.o   -c /Users/penggu/workplace/github/GPLearning/app/src/main/cpp/gif/control.c",
+  "file": "/Users/penggu/workplace/github/GPLearning/app/src/main/cpp/gif/control.c"
+},
+
+{
+  "directory": "/Users/penggu/workplace/github/GPLearning/app/.cxx/cmake/debug/arm64-v8a",
+  "command": "/Users/penggu/Library/Android/sdk/ndk-bundle/toolchains/llvm/prebuilt/darwin-x86_64/bin/clang --target=aarch64-none-linux-android21 --gcc-toolchain=/Users/penggu/Library/Android/sdk/ndk-bundle/toolchains/llvm/prebuilt/darwin-x86_64 --sysroot=/Users/penggu/Library/Android/sdk/ndk-bundle/toolchains/llvm/prebuilt/darwin-x86_64/sysroot -Dnative_lib_EXPORTS -I/Users/penggu/workplace/github/GPLearning/app/src/main/cpp/include  -g -DANDROID -fdata-sections -ffunction-sections -funwind-tables -fstack-protector-strong -no-canonical-prefixes -fno-addrsig -Wa,--noexecstack -Wformat -Werror=format-security  -O0 -fno-limit-debug-info -fno-experimental-isel  -fPIC   -o CMakeFiles/native-lib.dir/gif/decoding.c.o   -c /Users/penggu/workplace/github/GPLearning/app/src/main/cpp/gif/decoding.c",
+  "file": "/Users/penggu/workplace/github/GPLearning/app/src/main/cpp/gif/decoding.c"
+},
+
+{
+  "directory": "/Users/penggu/workplace/github/GPLearning/app/.cxx/cmake/debug/arm64-v8a",
+  "command": "/Users/penggu/Library/Android/sdk/ndk-bundle/toolchains/llvm/prebuilt/darwin-x86_64/bin/clang --target=aarch64-none-linux-android21 --gcc-toolchain=/Users/penggu/Library/Android/sdk/ndk-bundle/toolchains/llvm/prebuilt/darwin-x86_64 --sysroot=/Users/penggu/Library/Android/sdk/ndk-bundle/toolchains/llvm/prebuilt/darwin-x86_64/sysroot -Dnative_lib_EXPORTS -I/Users/penggu/workplace/github/GPLearning/app/src/main/cpp/include  -g -DANDROID -fdata-sections -ffunction-sections -funwind-tables -fstack-protector-strong -no-canonical-prefixes -fno-addrsig -Wa,--noexecstack -Wformat -Werror=format-security  -O0 -fno-limit-debug-info -fno-experimental-isel  -fPIC   -o CMakeFiles/native-lib.dir/gif/dispose.c.o   -c /Users/penggu/workplace/github/GPLearning/app/src/main/cpp/gif/dispose.c",
+  "file": "/Users/penggu/workplace/github/GPLearning/app/src/main/cpp/gif/dispose.c"
+},
+
+{
+  "directory": "/Users/penggu/workplace/github/GPLearning/app/.cxx/cmake/debug/arm64-v8a",
+  "command": "/Users/penggu/Library/Android/sdk/ndk-bundle/toolchains/llvm/prebuilt/darwin-x86_64/bin/clang --target=aarch64-none-linux-android21 --gcc-toolchain=/Users/penggu/Library/Android/sdk/ndk-bundle/toolchains/llvm/prebuilt/darwin-x86_64 --sysroot=/Users/penggu/Library/Android/sdk/ndk-bundle/toolchains/llvm/prebuilt/darwin-x86_64/sysroot -Dnative_lib_EXPORTS -I/Users/penggu/workplace/github/GPLearning/app/src/main/cpp/include  -g -DANDROID -fdata-sections -ffunction-sections -funwind-tables -fstack-protector-strong -no-canonical-prefixes -fno-addrsig -Wa,--noexecstack -Wformat -Werror=format-security  -O0 -fno-limit-debug-info -fno-experimental-isel  -fPIC   -o CMakeFiles/native-lib.dir/gif/drawing.c.o   -c /Users/penggu/workplace/github/GPLearning/app/src/main/cpp/gif/drawing.c",
+  "file": "/Users/penggu/workplace/github/GPLearning/app/src/main/cpp/gif/drawing.c"
+},
+
+{
+  "directory": "/Users/penggu/workplace/github/GPLearning/app/.cxx/cmake/debug/arm64-v8a",
+  "command": "/Users/penggu/Library/Android/sdk/ndk-bundle/toolchains/llvm/prebuilt/darwin-x86_64/bin/clang --target=aarch64-none-linux-android21 --gcc-toolchain=/Users/penggu/Library/Android/sdk/ndk-bundle/toolchains/llvm/prebuilt/darwin-x86_64 --sysroot=/Users/penggu/Library/Android/sdk/ndk-bundle/toolchains/llvm/prebuilt/darwin-x86_64/sysroot -Dnative_lib_EXPORTS -I/Users/penggu/workplace/github/GPLearning/app/src/main/cpp/include  -g -DANDROID -fdata-sections -ffunction-sections -funwind-tables -fstack-protector-strong -no-canonical-prefixes -fno-addrsig -Wa,--noexecstack -Wformat -Werror=format-security  -O0 -fno-limit-debug-info -fno-experimental-isel  -fPIC   -o CMakeFiles/native-lib.dir/gif/exception.c.o   -c /Users/penggu/workplace/github/GPLearning/app/src/main/cpp/gif/exception.c",
+  "file": "/Users/penggu/workplace/github/GPLearning/app/src/main/cpp/gif/exception.c"
+},
+
+{
+  "directory": "/Users/penggu/workplace/github/GPLearning/app/.cxx/cmake/debug/arm64-v8a",
+  "command": "/Users/penggu/Library/Android/sdk/ndk-bundle/toolchains/llvm/prebuilt/darwin-x86_64/bin/clang --target=aarch64-none-linux-android21 --gcc-toolchain=/Users/penggu/Library/Android/sdk/ndk-bundle/toolchains/llvm/prebuilt/darwin-x86_64 --sysroot=/Users/penggu/Library/Android/sdk/ndk-bundle/toolchains/llvm/prebuilt/darwin-x86_64/sysroot -Dnative_lib_EXPORTS -I/Users/penggu/workplace/github/GPLearning/app/src/main/cpp/include  -g -DANDROID -fdata-sections -ffunction-sections -funwind-tables -fstack-protector-strong -no-canonical-prefixes -fno-addrsig -Wa,--noexecstack -Wformat -Werror=format-security  -O0 -fno-limit-debug-info -fno-experimental-isel  -fPIC   -o CMakeFiles/native-lib.dir/gif/gif.c.o   -c /Users/penggu/workplace/github/GPLearning/app/src/main/cpp/gif/gif.c",
+  "file": "/Users/penggu/workplace/github/GPLearning/app/src/main/cpp/gif/gif.c"
+},
+
+{
+  "directory": "/Users/penggu/workplace/github/GPLearning/app/.cxx/cmake/debug/arm64-v8a",
+  "command": "/Users/penggu/Library/Android/sdk/ndk-bundle/toolchains/llvm/prebuilt/darwin-x86_64/bin/clang --target=aarch64-none-linux-android21 --gcc-toolchain=/Users/penggu/Library/Android/sdk/ndk-bundle/toolchains/llvm/prebuilt/darwin-x86_64 --sysroot=/Users/penggu/Library/Android/sdk/ndk-bundle/toolchains/llvm/prebuilt/darwin-x86_64/sysroot -Dnative_lib_EXPORTS -I/Users/penggu/workplace/github/GPLearning/app/src/main/cpp/include  -g -DANDROID -fdata-sections -ffunction-sections -funwind-tables -fstack-protector-strong -no-canonical-prefixes -fno-addrsig -Wa,--noexecstack -Wformat -Werror=format-security  -O0 -fno-limit-debug-info -fno-experimental-isel  -fPIC   -o CMakeFiles/native-lib.dir/gif/init.c.o   -c /Users/penggu/workplace/github/GPLearning/app/src/main/cpp/gif/init.c",
+  "file": "/Users/penggu/workplace/github/GPLearning/app/src/main/cpp/gif/init.c"
+},
+
+{
+  "directory": "/Users/penggu/workplace/github/GPLearning/app/.cxx/cmake/debug/arm64-v8a",
+  "command": "/Users/penggu/Library/Android/sdk/ndk-bundle/toolchains/llvm/prebuilt/darwin-x86_64/bin/clang --target=aarch64-none-linux-android21 --gcc-toolchain=/Users/penggu/Library/Android/sdk/ndk-bundle/toolchains/llvm/prebuilt/darwin-x86_64 --sysroot=/Users/penggu/Library/Android/sdk/ndk-bundle/toolchains/llvm/prebuilt/darwin-x86_64/sysroot -Dnative_lib_EXPORTS -I/Users/penggu/workplace/github/GPLearning/app/src/main/cpp/include  -g -DANDROID -fdata-sections -ffunction-sections -funwind-tables -fstack-protector-strong -no-canonical-prefixes -fno-addrsig -Wa,--noexecstack -Wformat -Werror=format-security  -O0 -fno-limit-debug-info -fno-experimental-isel  -fPIC   -o CMakeFiles/native-lib.dir/gif/jni.c.o   -c /Users/penggu/workplace/github/GPLearning/app/src/main/cpp/gif/jni.c",
+  "file": "/Users/penggu/workplace/github/GPLearning/app/src/main/cpp/gif/jni.c"
+},
+
+{
+  "directory": "/Users/penggu/workplace/github/GPLearning/app/.cxx/cmake/debug/arm64-v8a",
+  "command": "/Users/penggu/Library/Android/sdk/ndk-bundle/toolchains/llvm/prebuilt/darwin-x86_64/bin/clang --target=aarch64-none-linux-android21 --gcc-toolchain=/Users/penggu/Library/Android/sdk/ndk-bundle/toolchains/llvm/prebuilt/darwin-x86_64 --sysroot=/Users/penggu/Library/Android/sdk/ndk-bundle/toolchains/llvm/prebuilt/darwin-x86_64/sysroot -Dnative_lib_EXPORTS -I/Users/penggu/workplace/github/GPLearning/app/src/main/cpp/include  -g -DANDROID -fdata-sections -ffunction-sections -funwind-tables -fstack-protector-strong -no-canonical-prefixes -fno-addrsig -Wa,--noexecstack -Wformat -Werror=format-security  -O0 -fno-limit-debug-info -fno-experimental-isel  -fPIC   -o CMakeFiles/native-lib.dir/gif/metadata.c.o   -c /Users/penggu/workplace/github/GPLearning/app/src/main/cpp/gif/metadata.c",
+  "file": "/Users/penggu/workplace/github/GPLearning/app/src/main/cpp/gif/metadata.c"
+},
+
+{
+  "directory": "/Users/penggu/workplace/github/GPLearning/app/.cxx/cmake/debug/arm64-v8a",
+  "command": "/Users/penggu/Library/Android/sdk/ndk-bundle/toolchains/llvm/prebuilt/darwin-x86_64/bin/clang --target=aarch64-none-linux-android21 --gcc-toolchain=/Users/penggu/Library/Android/sdk/ndk-bundle/toolchains/llvm/prebuilt/darwin-x86_64 --sysroot=/Users/penggu/Library/Android/sdk/ndk-bundle/toolchains/llvm/prebuilt/darwin-x86_64/sysroot -Dnative_lib_EXPORTS -I/Users/penggu/workplace/github/GPLearning/app/src/main/cpp/include  -g -DANDROID -fdata-sections -ffunction-sections -funwind-tables -fstack-protector-strong -no-canonical-prefixes -fno-addrsig -Wa,--noexecstack -Wformat -Werror=format-security  -O0 -fno-limit-debug-info -fno-experimental-isel  -fPIC   -o CMakeFiles/native-lib.dir/gif/opengl.c.o   -c /Users/penggu/workplace/github/GPLearning/app/src/main/cpp/gif/opengl.c",
+  "file": "/Users/penggu/workplace/github/GPLearning/app/src/main/cpp/gif/opengl.c"
+},
+
+{
+  "directory": "/Users/penggu/workplace/github/GPLearning/app/.cxx/cmake/debug/arm64-v8a",
+  "command": "/Users/penggu/Library/Android/sdk/ndk-bundle/toolchains/llvm/prebuilt/darwin-x86_64/bin/clang --target=aarch64-none-linux-android21 --gcc-toolchain=/Users/penggu/Library/Android/sdk/ndk-bundle/toolchains/llvm/prebuilt/darwin-x86_64 --sysroot=/Users/penggu/Library/Android/sdk/ndk-bundle/toolchains/llvm/prebuilt/darwin-x86_64/sysroot -Dnative_lib_EXPORTS -I/Users/penggu/workplace/github/GPLearning/app/src/main/cpp/include  -g -DANDROID -fdata-sections -ffunction-sections -funwind-tables -fstack-protector-strong -no-canonical-prefixes -fno-addrsig -Wa,--noexecstack -Wformat -Werror=format-security  -O0 -fno-limit-debug-info -fno-experimental-isel  -fPIC   -o CMakeFiles/native-lib.dir/gif/surface.c.o   -c /Users/penggu/workplace/github/GPLearning/app/src/main/cpp/gif/surface.c",
+  "file": "/Users/penggu/workplace/github/GPLearning/app/src/main/cpp/gif/surface.c"
+},
+
+{
+  "directory": "/Users/penggu/workplace/github/GPLearning/app/.cxx/cmake/debug/arm64-v8a",
+  "command": "/Users/penggu/Library/Android/sdk/ndk-bundle/toolchains/llvm/prebuilt/darwin-x86_64/bin/clang --target=aarch64-none-linux-android21 --gcc-toolchain=/Users/penggu/Library/Android/sdk/ndk-bundle/toolchains/llvm/prebuilt/darwin-x86_64 --sysroot=/Users/penggu/Library/Android/sdk/ndk-bundle/toolchains/llvm/prebuilt/darwin-x86_64/sysroot -Dnative_lib_EXPORTS -I/Users/penggu/workplace/github/GPLearning/app/src/main/cpp/include  -g -DANDROID -fdata-sections -ffunction-sections -funwind-tables -fstack-protector-strong -no-canonical-prefixes -fno-addrsig -Wa,--noexecstack -Wformat -Werror=format-security  -O0 -fno-limit-debug-info -fno-experimental-isel  -fPIC   -o CMakeFiles/native-lib.dir/gif/time.c.o   -c /Users/penggu/workplace/github/GPLearning/app/src/main/cpp/gif/time.c",
+  "file": "/Users/penggu/workplace/github/GPLearning/app/src/main/cpp/gif/time.c"
+},
+
+{
+  "directory": "/Users/penggu/workplace/github/GPLearning/app/.cxx/cmake/debug/arm64-v8a",
+  "command": "/Users/penggu/Library/Android/sdk/ndk-bundle/toolchains/llvm/prebuilt/darwin-x86_64/bin/clang --target=aarch64-none-linux-android21 --gcc-toolchain=/Users/penggu/Library/Android/sdk/ndk-bundle/toolchains/llvm/prebuilt/darwin-x86_64 --sysroot=/Users/penggu/Library/Android/sdk/ndk-bundle/toolchains/llvm/prebuilt/darwin-x86_64/sysroot -Dnative_lib_EXPORTS -I/Users/penggu/workplace/github/GPLearning/app/src/main/cpp/include  -g -DANDROID -fdata-sections -ffunction-sections -funwind-tables -fstack-protector-strong -no-canonical-prefixes -fno-addrsig -Wa,--noexecstack -Wformat -Werror=format-security  -O0 -fno-limit-debug-info -fno-experimental-isel  -fPIC   -o CMakeFiles/native-lib.dir/giflib/dgif_lib.c.o   -c /Users/penggu/workplace/github/GPLearning/app/src/main/cpp/giflib/dgif_lib.c",
+  "file": "/Users/penggu/workplace/github/GPLearning/app/src/main/cpp/giflib/dgif_lib.c"
+},
+
+{
+  "directory": "/Users/penggu/workplace/github/GPLearning/app/.cxx/cmake/debug/arm64-v8a",
+  "command": "/Users/penggu/Library/Android/sdk/ndk-bundle/toolchains/llvm/prebuilt/darwin-x86_64/bin/clang --target=aarch64-none-linux-android21 --gcc-toolchain=/Users/penggu/Library/Android/sdk/ndk-bundle/toolchains/llvm/prebuilt/darwin-x86_64 --sysroot=/Users/penggu/Library/Android/sdk/ndk-bundle/toolchains/llvm/prebuilt/darwin-x86_64/sysroot -Dnative_lib_EXPORTS -I/Users/penggu/workplace/github/GPLearning/app/src/main/cpp/include  -g -DANDROID -fdata-sections -ffunction-sections -funwind-tables -fstack-protector-strong -no-canonical-prefixes -fno-addrsig -Wa,--noexecstack -Wformat -Werror=format-security  -O0 -fno-limit-debug-info -fno-experimental-isel  -fPIC   -o CMakeFiles/native-lib.dir/giflib/gifalloc.c.o   -c /Users/penggu/workplace/github/GPLearning/app/src/main/cpp/giflib/gifalloc.c",
+  "file": "/Users/penggu/workplace/github/GPLearning/app/src/main/cpp/giflib/gifalloc.c"
+},
+
+{
+  "directory": "/Users/penggu/workplace/github/GPLearning/app/.cxx/cmake/debug/arm64-v8a",
+  "command": "/Users/penggu/Library/Android/sdk/ndk-bundle/toolchains/llvm/prebuilt/darwin-x86_64/bin/clang --target=aarch64-none-linux-android21 --gcc-toolchain=/Users/penggu/Library/Android/sdk/ndk-bundle/toolchains/llvm/prebuilt/darwin-x86_64 --sysroot=/Users/penggu/Library/Android/sdk/ndk-bundle/toolchains/llvm/prebuilt/darwin-x86_64/sysroot -Dnative_lib_EXPORTS -I/Users/penggu/workplace/github/GPLearning/app/src/main/cpp/include  -g -DANDROID -fdata-sections -ffunction-sections -funwind-tables -fstack-protector-strong -no-canonical-prefixes -fno-addrsig -Wa,--noexecstack -Wformat -Werror=format-security  -O0 -fno-limit-debug-info -fno-experimental-isel  -fPIC   -o CMakeFiles/native-lib.dir/giflib/openbsd-reallocarray.c.o   -c /Users/penggu/workplace/github/GPLearning/app/src/main/cpp/giflib/openbsd-reallocarray.c",
+  "file": "/Users/penggu/workplace/github/GPLearning/app/src/main/cpp/giflib/openbsd-reallocarray.c"
+}
+]

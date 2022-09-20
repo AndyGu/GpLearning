@@ -1,0 +1,179 @@
+{
+  "stringTable": {
+    "0": "/Users/penggu/workplace/github/GPLearning/app/.cxx/cmake/debug/armeabi-v7a",
+    "1": "--target=armv7-none-linux-androideabi19 --gcc-toolchain=/Users/penggu/Library/Android/sdk/ndk-bundle/toolchains/llvm/prebuilt/darwin-x86_64 --sysroot=/Users/penggu/Library/Android/sdk/ndk-bundle/toolchains/llvm/prebuilt/darwin-x86_64/sysroot -Dnative_lib_EXPORTS -I/Users/penggu/workplace/github/GPLearning/app/src/main/cpp/include -g -DANDROID -fdata-sections -ffunction-sections -funwind-tables -fstack-protector-strong -no-canonical-prefixes -fno-addrsig -march=armv7-a -mthumb -Wa,--noexecstack -Wformat -Werror=format-security -O0 -fno-limit-debug-info -fPIC",
+    "2": "-target armv7-none-linux-androideabi19 -gcc-toolchain /Users/penggu/Library/Android/sdk/ndk-bundle/toolchains/llvm/prebuilt/darwin-x86_64 --sysroot=/Users/penggu/Library/Android/sdk/ndk-bundle/toolchains/llvm/prebuilt/darwin-x86_64/sysroot -Dnative_lib_EXPORTS -I/Users/penggu/workplace/github/GPLearning/app/src/main/cpp/include -g -DANDROID -fdata-sections -ffunction-sections -funwind-tables -fstack-protector-strong -no-canonical-prefixes -fno-addrsig -march=armv7-a -mthumb -Wa,--noexecstack -Wformat -Werror=format-security -O0 -fno-limit-debug-info -fPIC"
+  },
+  "buildFiles": [
+    "/Users/penggu/workplace/github/GPLearning/app/src/main/cpp/CMakeLists.txt",
+    "/Users/penggu/Library/Android/sdk/ndk-bundle/build/cmake/android.toolchain.cmake",
+    "/Users/penggu/Library/Android/sdk/ndk-bundle/build/cmake/platforms.cmake"
+  ],
+  "cleanCommands": [
+    "/Users/penggu/Library/Android/sdk/cmake/3.10.2.4988404/bin/ninja -C \"/Users/penggu/workplace/github/GPLearning/app/.cxx/cmake/debug/armeabi-v7a\" clean"
+  ],
+  "buildTargetsCommand": "/Users/penggu/Library/Android/sdk/cmake/3.10.2.4988404/bin/ninja  -C \"/Users/penggu/workplace/github/GPLearning/app/.cxx/cmake/debug/armeabi-v7a\" {LIST_OF_TARGETS_TO_BUILD}",
+  "libraries": {
+    "native-lib-Debug-armeabi-v7a": {
+      "buildCommand": "/Users/penggu/Library/Android/sdk/cmake/3.10.2.4988404/bin/ninja -C \"/Users/penggu/workplace/github/GPLearning/app/.cxx/cmake/debug/armeabi-v7a\" native-lib",
+      "buildType": "debug",
+      "toolchain": "2633351466",
+      "abi": "armeabi-v7a",
+      "artifactName": "native-lib",
+      "files": [
+        {
+          "src": "/Users/penggu/workplace/github/GPLearning/app/src/main/cpp/bspatch.c",
+          "flagsOrdinal": 1,
+          "workingDirectoryOrdinal": 0
+        },
+        {
+          "src": "/Users/penggu/workplace/github/GPLearning/app/src/main/cpp/bzip/blocksort.c",
+          "flagsOrdinal": 1,
+          "workingDirectoryOrdinal": 0
+        },
+        {
+          "src": "/Users/penggu/workplace/github/GPLearning/app/src/main/cpp/bzip/bzlib.c",
+          "flagsOrdinal": 1,
+          "workingDirectoryOrdinal": 0
+        },
+        {
+          "src": "/Users/penggu/workplace/github/GPLearning/app/src/main/cpp/bzip/compress.c",
+          "flagsOrdinal": 1,
+          "workingDirectoryOrdinal": 0
+        },
+        {
+          "src": "/Users/penggu/workplace/github/GPLearning/app/src/main/cpp/bzip/crctable.c",
+          "flagsOrdinal": 1,
+          "workingDirectoryOrdinal": 0
+        },
+        {
+          "src": "/Users/penggu/workplace/github/GPLearning/app/src/main/cpp/bzip/decompress.c",
+          "flagsOrdinal": 1,
+          "workingDirectoryOrdinal": 0
+        },
+        {
+          "src": "/Users/penggu/workplace/github/GPLearning/app/src/main/cpp/bzip/huffman.c",
+          "flagsOrdinal": 1,
+          "workingDirectoryOrdinal": 0
+        },
+        {
+          "src": "/Users/penggu/workplace/github/GPLearning/app/src/main/cpp/bzip/randtable.c",
+          "flagsOrdinal": 1,
+          "workingDirectoryOrdinal": 0
+        },
+        {
+          "src": "/Users/penggu/workplace/github/GPLearning/app/src/main/cpp/gif/bitmap.c",
+          "flagsOrdinal": 1,
+          "workingDirectoryOrdinal": 0
+        },
+        {
+          "src": "/Users/penggu/workplace/github/GPLearning/app/src/main/cpp/gif/control.c",
+          "flagsOrdinal": 1,
+          "workingDirectoryOrdinal": 0
+        },
+        {
+          "src": "/Users/penggu/workplace/github/GPLearning/app/src/main/cpp/gif/decoding.c",
+          "flagsOrdinal": 1,
+          "workingDirectoryOrdinal": 0
+        },
+        {
+          "src": "/Users/penggu/workplace/github/GPLearning/app/src/main/cpp/gif/dispose.c",
+          "flagsOrdinal": 1,
+          "workingDirectoryOrdinal": 0
+        },
+        {
+          "src": "/Users/penggu/workplace/github/GPLearning/app/src/main/cpp/gif/drawing.c",
+          "flagsOrdinal": 1,
+          "workingDirectoryOrdinal": 0
+        },
+        {
+          "src": "/Users/penggu/workplace/github/GPLearning/app/src/main/cpp/gif/exception.c",
+          "flagsOrdinal": 1,
+          "workingDirectoryOrdinal": 0
+        },
+        {
+          "src": "/Users/penggu/workplace/github/GPLearning/app/src/main/cpp/gif/gif.c",
+          "flagsOrdinal": 1,
+          "workingDirectoryOrdinal": 0
+        },
+        {
+          "src": "/Users/penggu/workplace/github/GPLearning/app/src/main/cpp/gif/init.c",
+          "flagsOrdinal": 1,
+          "workingDirectoryOrdinal": 0
+        },
+        {
+          "src": "/Users/penggu/workplace/github/GPLearning/app/src/main/cpp/gif/jni.c",
+          "flagsOrdinal": 1,
+          "workingDirectoryOrdinal": 0
+        },
+        {
+          "src": "/Users/penggu/workplace/github/GPLearning/app/src/main/cpp/gif/metadata.c",
+          "flagsOrdinal": 1,
+          "workingDirectoryOrdinal": 0
+        },
+        {
+          "src": "/Users/penggu/workplace/github/GPLearning/app/src/main/cpp/gif/opengl.c",
+          "flagsOrdinal": 1,
+          "workingDirectoryOrdinal": 0
+        },
+        {
+          "src": "/Users/penggu/workplace/github/GPLearning/app/src/main/cpp/gif/surface.c",
+          "flagsOrdinal": 1,
+          "workingDirectoryOrdinal": 0
+        },
+        {
+          "src": "/Users/penggu/workplace/github/GPLearning/app/src/main/cpp/gif/time.c",
+          "flagsOrdinal": 1,
+          "workingDirectoryOrdinal": 0
+        },
+        {
+          "src": "/Users/penggu/workplace/github/GPLearning/app/src/main/cpp/giflib/dgif_lib.c",
+          "flagsOrdinal": 1,
+          "workingDirectoryOrdinal": 0
+        },
+        {
+          "src": "/Users/penggu/workplace/github/GPLearning/app/src/main/cpp/giflib/gifalloc.c",
+          "flagsOrdinal": 1,
+          "workingDirectoryOrdinal": 0
+        },
+        {
+          "src": "/Users/penggu/workplace/github/GPLearning/app/src/main/cpp/giflib/openbsd-reallocarray.c",
+          "flagsOrdinal": 1,
+          "workingDirectoryOrdinal": 0
+        },
+        {
+          "src": "/Users/penggu/workplace/github/GPLearning/app/src/main/cpp/gif/memset.arm.S",
+          "flagsOrdinal": 2,
+          "workingDirectoryOrdinal": 0
+        },
+        {
+          "src": "/Users/penggu/workplace/github/GPLearning/app/src/main/cpp/native-lib.cpp",
+          "flagsOrdinal": 1,
+          "workingDirectoryOrdinal": 0
+        },
+        {
+          "src": "/Users/penggu/workplace/github/GPLearning/app/src/main/cpp/utils.cpp",
+          "flagsOrdinal": 1,
+          "workingDirectoryOrdinal": 0
+        }
+      ],
+      "headers": [],
+      "output": "/Users/penggu/workplace/github/GPLearning/app/build/intermediates/cmake/debug/obj/armeabi-v7a/libnative-lib.so",
+      "runtimeFiles": [
+        "/Users/penggu/workplace/github/GPLearning/app/src/main/jniLibs/armeabi-v7a/libopencv_java4.so"
+      ]
+    }
+  },
+  "toolchains": {
+    "2633351466": {
+      "cCompilerExecutable": "/Users/penggu/Library/Android/sdk/ndk-bundle/toolchains/llvm/prebuilt/darwin-x86_64/bin/clang",
+      "cppCompilerExecutable": "/Users/penggu/Library/Android/sdk/ndk-bundle/toolchains/llvm/prebuilt/darwin-x86_64/bin/clang++"
+    }
+  },
+  "cFileExtensions": [
+    "c"
+  ],
+  "cppFileExtensions": [
+    "cpp"
+  ]
+}

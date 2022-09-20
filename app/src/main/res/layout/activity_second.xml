@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:id="@+id/ll_container"
+    tools:context="com.bard.gplearning.SecondActivity" >
+
+    <Button
+        android:id="@+id/send"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:text="发送信息" />
+
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <ImageView
+            android:id="@+id/iv_circle"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:layout_marginTop="30dp"
+            android:layout_centerHorizontal="true"
+            android:src="@mipmap/icon_circle"/>
+
+
+        <ImageView
+            android:id="@+id/iv_flower"
+            android:layout_width="250dp"
+            android:layout_height="250dp"
+            android:layout_below="@+id/iv_circle"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="30dp"
+            android:src="@mipmap/icon_flower" />
+    </RelativeLayout>
+</LinearLayout>

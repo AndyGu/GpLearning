@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <declare-styleable name="PercentLayout">
+        <attr name="widthPercent" format="float"/>
+        <attr name="heightPercent" format="float"/>
+        <attr name="marginLeftPercent" format="float"/>
+        <attr name="marginTopPercent" format="float"/>
+        <attr name="marginRightPercent" format="float"/>
+        <attr name="marginBottomPercent" format="float"/>
+    </declare-styleable>
+
+
+    //自定义的属性
+    <declare-styleable name="PwdEditText">
+        <attr name="bg_width" format="dimension" />
+        <attr name="bg_color" format="color" />
+        <attr name="password_count" format="integer" />
+        <attr name="division_color" format="color" />
+        <attr name="division_width" format="dimension" />
+        <attr name="password_color" format="color" />
+        <attr name="password_size" format="dimension" />
+        <attr name="bg_radius" format="dimension" />
+    </declare-styleable>
+
+
+    <declare-styleable name="GestureImageView">
+        <attr name="max_scale" format="float" />
+        <attr name="min_scale" format="float" />
+        <attr name="revert_duration" format="integer" />
+        <attr name="open_scale_revert" format="boolean"/>
+        <attr name="open_rotate_revert" format="boolean"/>
+        <attr name="open_translate_revert" format="boolean"/>
+        <attr name="open_animator" format="boolean" />
+        <attr name="scale_center" format="enum">
+            <enum name="img_center" value="0" />
+            <enum name="finger_center" value="1" />
+        </attr>
+    </declare-styleable>
+</resources>

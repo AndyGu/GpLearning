@@ -1,0 +1,2 @@
+include ':Testlib'
+include ':app', ':NetStateLibrary', ':EventBusLibrary', ':GlideLibrary', ':HttpRequestLibrary', ':PluginLibrary', ':PluginModule', ':Component', ':Arouter', ':Annotation', ':Annotation_Compiler'
