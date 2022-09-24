@@ -134,7 +134,6 @@ public class MainActivity extends AppCompatActivity
     protected void onStart() {
         Log.e("MainActivity","onStart");
         super.onStart();
-        new Thread(() -> ((TextView)findViewById(R.id.tv16)).setText("onStart")).start();
     }
 
     @Override
@@ -143,20 +142,20 @@ public class MainActivity extends AppCompatActivity
         super.onResume();
 
 
-        new Handler().postDelayed(() -> {
-            new Thread(() -> {
-                Looper.prepare();
-                TextView textView = new TextView(MainActivity.this);
-                textView.setLayoutParams(new ViewGroup.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.WRAP_CONTENT));
-                textView.setBackgroundResource(R.color.colorAccent);
-                WindowManager wm = (WindowManager)getSystemService(Context.WINDOW_SERVICE);
-                wm.addView(textView, new WindowManager.LayoutParams());
-                textView.setText("小声点，艹");
-                textView.setTextColor(getResources().getColor(R.color.colorPrimaryDark));
-                textView.setBackgroundResource(android.R.color.transparent);
-                Looper.loop();
-            }).start();
-        }, 1000);
+//        new Handler().postDelayed(() -> {
+//            new Thread(() -> {
+//                Looper.prepare();
+//                TextView textView = new TextView(MainActivity.this);
+//                textView.setLayoutParams(new ViewGroup.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.WRAP_CONTENT));
+//                textView.setBackgroundResource(R.color.colorAccent);
+//                WindowManager wm = (WindowManager)getSystemService(Context.WINDOW_SERVICE);
+//                wm.addView(textView, new WindowManager.LayoutParams());
+//                textView.setText("小声点，艹");
+//                textView.setTextColor(getResources().getColor(R.color.colorPrimaryDark));
+//                textView.setBackgroundResource(android.R.color.transparent);
+//                Looper.loop();
+//            }).start();
+//        }, 1000);
 
     }
 
@@ -202,7 +201,6 @@ public class MainActivity extends AppCompatActivity
     }
 
     public class MyRecevier extends BroadcastReceiver{
-
         @Override
         public void onReceive(Context context, Intent intent) {
             Bundle bundle = getResultExtras(true);
@@ -325,15 +323,13 @@ private Bitmap setImageMatrix1(Bitmap bitmap) {
 
  */
 
-        new Thread(() -> ((TextView)findViewById(R.id.tv16)).setText("onCreate")).start();
-
-
         PluginManager.getInstance().init(MainActivity.this);
 
         findViewById(R.id.button).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 singleImgLoad();
+                testAspect();
             }
         });
 
@@ -759,5 +755,9 @@ private Bitmap setImageMatrix1(Bitmap bitmap) {
                 }
             }
         }
+    }
+
+    private void testAspect(){
+        Log.e("MainActivity", "testAspectJ");
     }
 }

@@ -39,7 +39,7 @@
         <activity android:name=".WaterViewActivity" />
         <activity android:name=".ImmersiveActivity" />
         <activity android:name=".DisplayCutoutActivity"/>
-        <activity android:name=".permission.MyPermissionActivity" android:theme="@style/my_Transparent"/>
+        <activity android:name=".permissions.MyPermissionActivity" android:theme="@style/my_Transparent"/>
 
         <provider
             android:name="androidx.core.content.FileProvider"
