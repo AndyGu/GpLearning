@@ -14,22 +14,18 @@ import androidx.lifecycle.Observer;
 import androidx.lifecycle.SavedStateViewModelFactory;
 import androidx.lifecycle.ViewModelProvider;
 import androidx.recyclerview.widget.LinearLayoutManager;
-import androidx.savedstate.SavedStateRegistry;
 
 import com.bard.gplearning.BaseApplication;
 import com.bard.gplearning.R;
 import com.bard.gplearning.databinding.FragmentNewsBinding;
 import com.bard.gplearning.mvvm.base.BaseCustomViewModel;
-import com.bard.gplearning.mvvm.base.model.IBaseModelListener;
-import com.bard.gplearning.mvvm.base.model.PagingResult;
 import com.kingja.loadsir.callback.Callback;
 import com.kingja.loadsir.core.LoadService;
 import com.kingja.loadsir.core.LoadSir;
-import com.scwang.smartrefresh.layout.api.RefreshLayout;
-import com.scwang.smartrefresh.layout.listener.OnLoadMoreListener;
-import com.scwang.smartrefresh.layout.listener.OnRefreshListener;
+import com.scwang.smart.refresh.layout.api.RefreshLayout;
+import com.scwang.smart.refresh.layout.listener.OnLoadMoreListener;
+import com.scwang.smart.refresh.layout.listener.OnRefreshListener;
 
-import java.util.ArrayList;
 import java.util.List;
 
 public class NewsListFragment extends Fragment implements Observer {

@@ -4,6 +4,7 @@ import android.app.Activity;
 import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
@@ -15,11 +16,12 @@ import com.bard.gplearning.permissions.util.PermissionUtils;
 
 //专门处理权限的Activity
 public class MyPermissionActivity extends Activity {
+    private static final String TAG = PermissionUtils.class.getSimpleName();
 
     //定义权限处理的标识 -- 接收用户传递进来的
     private final static String PARAM_PERMISSION = "param_permission";
     private final static String PARAM_REQUEST_CODE = "param_request_code";
-    public final static int PARAM_REQUEST_CODE_DEFAULT = -1;
+    public final static int PARAM_REQUEST_CODE_DEFAULT = 1;
 
     private String[] permissions; //存储用户要申请的权限
     private int requestCode;
@@ -83,6 +85,7 @@ public class MyPermissionActivity extends Activity {
     // 把当前整个空白Activity暴露给外界使用【给大管家AspectJ监听到申请权限的注解时使用】
     public static void requestPermissionAction(Context context, String[] permissions,
                                                int requestCode, IPermissionRequestCallback iPermissionRequestCallback){
+        Log.e(TAG, "requestPermissionAction");
         permissionListener = iPermissionRequestCallback;
 
         Intent intent = new Intent(context, MyPermissionActivity.class);

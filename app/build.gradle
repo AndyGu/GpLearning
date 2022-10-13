@@ -4,15 +4,16 @@ apply plugin: 'kotlin-android-extensions'
 apply plugin: 'io.github.wurensen.android-aspectjx'
 
 android {
-    compileSdkVersion COMPILE_SDK_VERSION as int
-    buildToolsVersion BUILDTOOLS_VERSION
+    compileSdkVersion rootProject.compileSdkVersion
+    buildToolsVersion rootProject.buildToolsVersion
+
     defaultConfig {
-        applicationId "com.bard.gplearning"
-        minSdkVersion MIN_SDK_VERSION as int
-        targetSdkVersion TARGET_SDK_VERSION as int
-        versionCode VERSION_CODE as int
-        versionName VERSION_NAME
-        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+        applicationId rootProject.app_appid.app
+        minSdkVersion rootProject.minSdkVersion
+        targetSdkVersion rootProject.targetSdkVersion
+        versionCode rootProject.versionCode
+        versionName rootProject.versionName
+        testInstrumentationRunner rootProject.testInstrumentationRunner
 
         multiDexEnabled true
 
@@ -21,6 +22,15 @@ android {
                 cppFlags ""
                 //兼容CPU构架
                 abiFilters 'armeabi-v7a', "arm64-v8a"
+            }
+        }
+
+        // 在gradle文件中配置选项参数值（用于APT传参接收）
+        // 同学们注意：切记：必须写在defaultConfig节点下
+        javaCompileOptions {
+            annotationProcessorOptions {
+                // project.getName() == app
+                arguments = [moduleName: project.getName(), packageNameForAPT: rootProject.packageNameForAPT]
             }
         }
     }
@@ -56,17 +66,16 @@ android {
     kotlinOptions {
         jvmTarget = "1.8"
     }
+
+    lintOptions { checkReleaseBuilds false }
 }
 
-// ajx配置
+// ajx配置，与annotation processor矛盾
 aspectjx {
     enabled = true
     // 移除kotlin相关，编译错误和提升速度
     exclude 'kotlin.jvm', 'kotlin.internal'
     exclude 'kotlinx.coroutines.internal', 'kotlinx.coroutines.android'
-//    exclude 'com.bard.gplearning'
-    exclude 'com.bard.annotation'
-    exclude 'com.bard.annotation_compiler'
     include 'com.bard.gplearning.MainActivity'
     include 'com.bard.gplearning.permissions'
 }
@@ -74,31 +83,36 @@ aspectjx {
 
 dependencies {
     implementation fileTree(dir: 'libs', include: ['*.jar'])
-    implementation "androidx.multidex:multidex:2.0.1"
-    implementation 'androidx.appcompat:appcompat:1.4.2'
-    implementation 'androidx.constraintlayout:constraintlayout:2.1.4'
-    implementation 'com.google.android.material:material:1.5.0'
-    implementation 'androidx.recyclerview:recyclerview:1.2.1'
-    implementation 'androidx.lifecycle:lifecycle-viewmodel-savedstate:2.4.0-alpha02'
+    implementation "androidx.multidex:multidex:$rootProject.multidex"
+    implementation "androidx.appcompat:appcompat:$rootProject.appcompat"
+    implementation "androidx.constraintlayout:constraintlayout:$rootProject.constraintlayout"
+    implementation "com.google.android.material:material:$rootProject.material"
+    implementation "androidx.recyclerview:recyclerview:$rootProject.recyclerview"
+    implementation "androidx.lifecycle:lifecycle-viewmodel-savedstate:$rootProject.lifecycle_viewmodel"
 
-    implementation 'com.scwang.smartrefresh:SmartRefreshLayout:1.1.0-alpha-14'
-    implementation 'com.scwang.smartrefresh:SmartRefreshHeader:1.1.0-alpha-14'
-    implementation 'com.kingja.loadsir:loadsir:1.3.8'
+    implementation "com.google.auto.service:auto-service:$rootProject.auto_service"
+    annotationProcessor "com.google.auto.service:auto-service:$rootProject.auto_service"
 
     implementation 'com.rmtheis:tess-two:7.0.0'
 
+    // 公共基础库
+    implementation project(":common")
     implementation project(path: ':NetStateLibrary')
     implementation project(path: ':EventBusLibrary')
     implementation project(path: ':GlideLibrary')
     implementation project(path: ':HttpRequestLibrary')
     implementation project(path: ':PluginLibrary')
-    implementation project(path: ':Arouter')
-    if(COMPONENT_IS_LIBRARY.toBoolean()){
-        implementation project(path: ':Component')
-    }
+    implementation project(path: ':WebViewlibrary')
 
-    implementation project(path: ':Annotation')
-    annotationProcessor project(path: ':Annotation_Compiler')
+    //  arouter 专用 注解模块
+    implementation project(":arouter_annotation")
+    // 使用注解处理器
+    // arouter 专用 注解处理器
+    annotationProcessor project(':arouter_compiler')
+
+    if(rootProject.component_is_library){
+        implementation project(':Component')
+    }
 
     implementation 'androidx.core:core-ktx:1.7.0'
     implementation 'org.jetbrains.kotlinx:kotlinx-coroutines-core:1.6.3'

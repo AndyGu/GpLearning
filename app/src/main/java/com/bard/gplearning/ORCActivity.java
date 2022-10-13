@@ -15,14 +15,14 @@ import android.widget.Toast;
 
 import androidx.annotation.Nullable;
 
-import com.bard.annotation.BindPath;
+import com.bard.arouter_annotation.BindPath;
 import com.googlecode.tesseract.android.TessBaseAPI;
 
 import java.io.File;
 import java.io.FileOutputStream;
 import java.io.InputStream;
 
-@BindPath("app/ORC")
+@BindPath(path = "/app/ORCActivity")
 public class ORCActivity extends Activity {
 
     private ImageView idCard;
@@ -67,10 +67,10 @@ public class ORCActivity extends Activity {
         Bitmap bitmap_id_number = findIdNumber(bitmap, Bitmap.Config.ARGB_8888);
 
         bitmap.recycle();
-        Log.e("identify","bitmap_id_number="+bitmap_id_number);
-        if(bitmap_id_number != null){
+        Log.e("identify", "bitmap_id_number=" + bitmap_id_number);
+        if (bitmap_id_number != null) {
             idCard.setImageBitmap(bitmap_id_number);
-        }else{
+        } else {
             bitmap_id_number.recycle();
             return;
         }
@@ -85,7 +85,7 @@ public class ORCActivity extends Activity {
     public void previous(View view) {
         tv_text.setText(null);
         index--;
-        if(index < 0){
+        if (index < 0) {
             index = ids.length - 1;
         }
         idCard.setImageResource(ids[index]);
@@ -94,7 +94,7 @@ public class ORCActivity extends Activity {
     public void next(View view) {
         tv_text.setText(null);
         index++;
-        if(index >= ids.length){
+        if (index >= ids.length) {
             index = 0;
         }
         idCard.setImageResource(ids[index]);
@@ -102,7 +102,7 @@ public class ORCActivity extends Activity {
 
 
     @SuppressLint("StaticFieldLeak")
-    private void initTess(){
+    private void initTess() {
         //让它在后台去初始化，记得加读写权限
         asyncTask = new AsyncTask<Void, Void, Boolean>() {
             @Override
@@ -110,32 +110,32 @@ public class ORCActivity extends Activity {
                 //目录+文件名 目录下需要tessdata目录
                 InputStream is = null;
                 FileOutputStream fos = null;
-                try{
-                    is = getAssets().open(language+ ".traineddata");
-                    File file = new File("sdcard/tess/tessdata/"+language+".traineddata");
-                    if(!file.exists()){
+                try {
+                    is = getAssets().open(language + ".traineddata");
+                    File file = new File("sdcard/tess/tessdata/" + language + ".traineddata");
+                    if (!file.exists()) {
                         file.getParentFile().mkdirs();
                         fos = new FileOutputStream(file);
                         byte[] buffer = new byte[2048];
                         int len;
-                        while((len = is.read(buffer)) != -1){
+                        while ((len = is.read(buffer)) != -1) {
                             fos.write(buffer, 0, len);
                         }
                         fos.close();
                     }
                     is.close();
                     return tessBaseAPI.init("/sdcard/tess", language);
-                }catch (Exception e){
+                } catch (Exception e) {
                     e.printStackTrace();
-                }finally {
-                    try{
-                        if(is != null){
+                } finally {
+                    try {
+                        if (is != null) {
                             is.close();
                         }
-                        if(fos != null){
+                        if (fos != null) {
                             fos.close();
                         }
-                    }catch (Exception e){
+                    } catch (Exception e) {
                         e.printStackTrace();
                     }
                 }
@@ -150,9 +150,9 @@ public class ORCActivity extends Activity {
             @Override
             protected void onPostExecute(Boolean aBoolean) {
                 dismissProgress();
-                if(aBoolean){
+                if (aBoolean) {
                     Toast.makeText(ORCActivity.this, "初始化ORC成功", Toast.LENGTH_SHORT).show();
-                }else{
+                } else {
                     finish();
                 }
             }
@@ -161,13 +161,10 @@ public class ORCActivity extends Activity {
     }
 
 
-
-
-
-    private void showProgress(){
-        if(progressDialog != null){
+    private void showProgress() {
+        if (progressDialog != null) {
             progressDialog.show();
-        }else{
+        } else {
             progressDialog = new ProgressDialog(this);
             progressDialog.setMessage("请稍后...");
             progressDialog.setIndeterminate(true);
@@ -176,8 +173,8 @@ public class ORCActivity extends Activity {
         }
     }
 
-    private void dismissProgress(){
-        if(progressDialog != null){
+    private void dismissProgress() {
+        if (progressDialog != null) {
             progressDialog.dismiss();
         }
     }

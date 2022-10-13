@@ -2,17 +2,18 @@ package com.bard.gplearning;
 
 import android.os.Bundle;
 import android.view.View;
+
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 
-import com.bard.annotation.BindPath;
+import com.bard.arouter_annotation.BindPath;
 import com.bard.eventbuslibrary.EventBus;
 import com.bard.eventbuslibrary.GPBean;
 import com.bard.gplearning.widgets.explosion.ExplosionField;
 import com.bard.gplearning.widgets.explosion.FallingParticleFactory;
 
 
-@BindPath("app/Second")
+@BindPath(path = "/app/SecondActivity")
 public class SecondActivity extends AppCompatActivity {
 
     @Override

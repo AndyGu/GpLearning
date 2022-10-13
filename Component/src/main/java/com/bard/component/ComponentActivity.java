@@ -5,10 +5,9 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 
-import com.bard.annotation.BindPath;
-import com.bard.arouter.ARouter;
+import com.bard.arouter_annotation.BindPath;
 
-@BindPath("Component/Component")
+@BindPath(path = "/Component/ComponentActivity")
 public class ComponentActivity extends AppCompatActivity {
 
     @Override
@@ -20,7 +19,7 @@ public class ComponentActivity extends AppCompatActivity {
         findViewById(R.id.btn_jump).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                ARouter.getInstance().jumpActivity("app/Second", null);
+//                ARouter.getInstance().jumpActivity("app/Second", null);
             }
         });
 

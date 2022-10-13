@@ -5,6 +5,7 @@ import androidx.annotation.RequiresApi;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.app.ActivityCompat;
 
+import android.Manifest;
 import android.app.Activity;
 import android.content.BroadcastReceiver;
 import android.content.ComponentName;
@@ -13,7 +14,6 @@ import android.content.Intent;
 import android.content.ServiceConnection;
 import android.content.pm.PackageManager;
 import android.content.res.Configuration;
-import android.content.res.Resources;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.graphics.Canvas;
@@ -25,12 +25,10 @@ import android.os.AsyncTask;
 import android.os.Build;
 import android.os.Bundle;
 import android.os.Environment;
-import android.os.Handler;
 import android.os.IBinder;
 import android.os.Looper;
-import android.os.Message;
-import android.os.Messenger;
 import android.os.PersistableBundle;
+import android.os.Process;
 import android.os.RemoteException;
 import android.util.Log;
 import android.util.Printer;
@@ -43,10 +41,9 @@ import android.view.WindowManager;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.ScrollView;
-import android.widget.TextView;
 import android.widget.Toast;
 
-import com.bard.annotation.BindPath;
+import com.bard.arouter_annotation.BindPath;
 import com.bard.eventbuslibrary.EventBus;
 import com.bard.eventbuslibrary.GPBean;
 import com.bard.eventbuslibrary.Subscriber;
@@ -55,6 +52,7 @@ import com.bard.glidelibrary.GPGlide;
 import com.bard.glidelibrary.RequestListener;
 import com.bard.gplearning.aidl.aidlbean.Person;
 import com.bard.gplearning.aidl.service.MyAidlService;
+import com.bard.gplearning.permissions.annotation.PermissionNeed;
 import com.bard.gplearning.utils.UriParseUtils;
 import com.bard.gplearning.utils.MockDownloadUtils;
 import com.bard.httprequestlibrary.GPHttp;
@@ -69,13 +67,11 @@ import com.bard.pluginlib.ProxyActivity;
 
 import java.io.File;
 import java.io.IOException;
-import java.util.HashSet;
 import java.util.List;
 import java.util.Random;
-import java.util.Set;
 
 
-@BindPath("app/Main")
+@BindPath(path = "/app/MainActivity")
 public class MainActivity extends AppCompatActivity
 //        implements NetChangeObserver
 {
@@ -98,47 +94,36 @@ public class MainActivity extends AppCompatActivity
 
     private IMyAidlInterface mAidl;
 
-
-
-
-    public class MyAidlClient extends IMyAidlInterface.Stub{
-        @Override
-        public void addPerson(Person person) throws RemoteException {
-            Log.e("MyAidlClient","addPerson");
-        }
-
-        @Override
-        public List<Person> getPersonList() throws RemoteException {
-            Log.e("MyAidlClient","getPersonList");
-            return null;
-        }
-    }
-    MyAidlClient myAidlClient = new MyAidlClient();
-
-
+    /**
+     * 这里是客户端
+     *
+     * 客户端与服务端绑定时的回调，返回 IBinder 后客户端就可以通过它远程调用服务端的方法，即实现了通讯
+     */
     private ServiceConnection mConnection = new ServiceConnection() {
         @Override
         public void onServiceConnected(ComponentName name, IBinder service) {
             //连接后拿到 Binder，转换成 AIDL，在不同进程会返回个代理
             mAidl = IMyAidlInterface.Stub.asInterface(service);
+            Log.e("MyAidlClient", "onServiceConnected pid="+ Process.myPid());
         }
 
         @Override
         public void onServiceDisconnected(ComponentName name) {
             mAidl = null;
+            Log.e("MyAidlClient", "onServiceDisconnected pid="+ Process.myPid());
         }
     };
 
 
     @Override
     protected void onStart() {
-        Log.e("MainActivity","onStart");
+        Log.e("MainActivity", "onStart");
         super.onStart();
     }
 
     @Override
     protected void onResume() {
-        Log.e("MainActivity","onResume");
+        Log.e("MainActivity", "onResume");
         super.onResume();
 
 
@@ -162,31 +147,31 @@ public class MainActivity extends AppCompatActivity
     @Override
     protected void onRestart() {
         super.onRestart();
-        Log.e("MainActivity","onRestart");
+        Log.e("MainActivity", "onRestart");
     }
 
     @Override
     protected void onStop() {
         super.onStop();
-        Log.e("MainActivity","onStop");
+        Log.e("MainActivity", "onStop");
     }
 
     @Override
     protected void onPause() {
         super.onPause();
-        Log.e("MainActivity","onPause");
+        Log.e("MainActivity", "onPause");
     }
 
     @Override
     protected void onSaveInstanceState(@NonNull Bundle outState) {
         super.onSaveInstanceState(outState);
-        Log.e("MainActivity","onSaveInstanceState");
+        Log.e("MainActivity", "onSaveInstanceState");
     }
 
     @Override
     protected void onRestoreInstanceState(Bundle savedInstanceState) {
         super.onRestoreInstanceState(savedInstanceState);
-        Log.e("MainActivity","onRestoreInstanceState 1");
+        Log.e("MainActivity", "onRestoreInstanceState 1");
     }
 
     @Override
@@ -197,10 +182,10 @@ public class MainActivity extends AppCompatActivity
     @Override
     public void onRestoreInstanceState(Bundle savedInstanceState, PersistableBundle persistentState) {
         super.onRestoreInstanceState(savedInstanceState, persistentState);
-        Log.e("MainActivity","onRestoreInstanceState 2");
+        Log.e("MainActivity", "onRestoreInstanceState 2");
     }
 
-    public class MyRecevier extends BroadcastReceiver{
+    public class MyRecevier extends BroadcastReceiver {
         @Override
         public void onReceive(Context context, Intent intent) {
             Bundle bundle = getResultExtras(true);
@@ -338,6 +323,7 @@ private Bitmap setImageMatrix1(Bitmap bitmap) {
             @Override
             public void onClick(View view) {
                 multiImgLoad();
+                testABC();
             }
         });
 
@@ -611,17 +597,17 @@ private Bitmap setImageMatrix1(Bitmap bitmap) {
 
             GPGlide.with(this).load(url)
                     .placeHolder(R.mipmap.ic_launcher).listener(new RequestListener() {
-                @Override
-                public boolean onSuccess(Bitmap bitmap) {
-                    Toast.makeText(MainActivity.this, "coming", Toast.LENGTH_SHORT).show();
-                    return false;
-                }
+                        @Override
+                        public boolean onSuccess(Bitmap bitmap) {
+                            Toast.makeText(MainActivity.this, "coming", Toast.LENGTH_SHORT).show();
+                            return false;
+                        }
 
-                @Override
-                public boolean onFailure() {
-                    return false;
-                }
-            }).into(imageView);
+                        @Override
+                        public boolean onFailure() {
+                            return false;
+                        }
+                    }).into(imageView);
         }
 
     }
@@ -708,7 +694,7 @@ private Bitmap setImageMatrix1(Bitmap bitmap) {
 
 
     @RequiresApi(api = Build.VERSION_CODES.P)
-    public void openFullScreenModel(Activity activity){
+    public void openFullScreenModel(Activity activity) {
         activity.requestWindowFeature(Window.FEATURE_NO_TITLE);
         WindowManager.LayoutParams lp = activity.getWindow().getAttributes();
         lp.layoutInDisplayCutoutMode = WindowManager.LayoutParams.LAYOUT_IN_DISPLAY_CUTOUT_MODE_SHORT_EDGES;
@@ -741,23 +727,30 @@ private Bitmap setImageMatrix1(Bitmap bitmap) {
     }
 
     @RequiresApi(api = Build.VERSION_CODES.P)
-    public void setCutout(){
+    public void setCutout() {
         View decorView = getWindow().getDecorView();
         WindowInsets rootWindowInsets = decorView.getRootWindowInsets();
-        if(rootWindowInsets != null){
+        if (rootWindowInsets != null) {
             DisplayCutout cutout = rootWindowInsets.getDisplayCutout();
             List<Rect> boundingRects = cutout.getBoundingRects();
-            if(boundingRects != null && boundingRects.size()>0){
+            if (boundingRects != null && boundingRects.size() > 0) {
                 String msg;
-                for(Rect rect : boundingRects){
-                    msg = "right-"+rect.right + " left-" + rect.left;
-                    Log.d("setCutout", "msg = "+ msg);
+                for (Rect rect : boundingRects) {
+                    msg = "right-" + rect.right + " left-" + rect.left;
+                    Log.d("setCutout", "msg = " + msg);
                 }
             }
         }
     }
 
-    private void testAspect(){
+    @PermissionNeed({Manifest.permission.WRITE_EXTERNAL_STORAGE})
+    private void testAspect() {
         Log.e("MainActivity", "testAspectJ");
+    }
+
+
+    @PermissionNeed({Manifest.permission.ACCESS_FINE_LOCATION})
+    private void testABC() {
+        Log.e("MainActivity", "testABC");
     }
 }

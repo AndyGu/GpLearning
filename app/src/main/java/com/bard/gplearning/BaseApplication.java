@@ -1,14 +1,12 @@
 package com.bard.gplearning;
 
 import android.app.Activity;
-import android.app.Application;
 import android.content.Context;
 import android.os.Bundle;
 
 import androidx.multidex.MultiDex;
 import androidx.multidex.MultiDexApplication;
 
-import com.bard.arouter.ARouter;
 import com.bard.gplearning.utils.Density;
 
 public class BaseApplication extends MultiDexApplication {
@@ -64,6 +62,6 @@ public class BaseApplication extends MultiDexApplication {
 
 //        NetworkManager.getInstance().init(this);
 
-        ARouter.getInstance().init(this);
+//        ARouter.getInstance().init(this);
     }
 }

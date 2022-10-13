@@ -10,13 +10,13 @@ import android.widget.ImageView;
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 
-import com.bard.annotation.BindPath;
+import com.bard.arouter_annotation.BindPath;
 import com.bard.gplearning.gif.GifManager;
 
 import java.io.File;
 import java.lang.ref.WeakReference;
 
-@BindPath("app/Third")
+@BindPath(path = "/app/ThirdActivity")
 public class ThirdActivity extends AppCompatActivity {
 
     String path = Environment.getExternalStorageDirectory().getAbsolutePath() +
@@ -48,7 +48,7 @@ public class ThirdActivity extends AppCompatActivity {
     }
 
 
-    static class MyHandler extends Handler{
+    static class MyHandler extends Handler {
         WeakReference<ThirdActivity> weakReference;
 
         MyHandler(ThirdActivity activity) {
@@ -58,7 +58,7 @@ public class ThirdActivity extends AppCompatActivity {
         @Override
         public void handleMessage(Message msg) {
             ThirdActivity activity = weakReference.get();
-            if(activity != null){
+            if (activity != null) {
                 activity.sendMsg();
             }
         }

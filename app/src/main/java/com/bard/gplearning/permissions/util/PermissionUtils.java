@@ -6,6 +6,8 @@ import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.os.Build;
 import android.os.Looper;
+import android.util.Log;
+import android.widget.Toast;
 
 import androidx.collection.SimpleArrayMap;
 import androidx.core.app.ActivityCompat;
@@ -40,7 +42,6 @@ public class PermissionUtils {
     }
 
 
-
     private static HashMap<String, Class<? extends ISetting>> permissionMenu = new HashMap<>();
 
     private static final String MANUFACTURER_DEFAULT = "Default";
@@ -73,11 +74,14 @@ public class PermissionUtils {
      * @return
      */
     public static boolean hasPermissionRequest(Context context, String... permissions) {
+
         for (String permission : permissions) {
             if (ContextCompat.checkSelfPermission(context, permission) != PackageManager.PERMISSION_GRANTED) {
+                Log.e(TAG,"hasPermissionRequest return false");
                 return false;
             }
         }
+        Log.e(TAG,"hasPermissionRequest return true");
         return true;
     }
 
@@ -90,18 +94,20 @@ public class PermissionUtils {
      */
     public static boolean requestPermissionSuccess(int... gantedResult) {
         if (gantedResult == null || gantedResult.length <= 0) {
+            Log.e(TAG,"requestPermissionSuccess length<=0 return false");
             return false;
         }
 
         for (int permissionValue : gantedResult) {
             if (permissionValue != PackageManager.PERMISSION_GRANTED) {
+                Log.e(TAG,"requestPermissionSuccess !=granted return false");
                 return false;
             }
         }
 
+        Log.e(TAG,"requestPermissionSuccess return true");
         return true;
     }
-
 
 
     /**
@@ -112,9 +118,11 @@ public class PermissionUtils {
     public static boolean shouldShowRequestPermissionRationale(Activity activity, String... permissions) {
         for (String permission : permissions) {
             if (!ActivityCompat.shouldShowRequestPermissionRationale(activity, permission)) {
+                Log.e(TAG,"shouldShowRequestPermissionRationale return true");
                 return true;
             }
         }
+        Log.e(TAG,"shouldShowRequestPermissionRationale return false");
         return false;
     }
 
@@ -126,6 +134,7 @@ public class PermissionUtils {
      * @param annotationClass
      */
     public static void invokeAnnotation(Object object, Class annotationClass, int requestCode) {
+        Log.e(TAG,"invokeAnnotation annotationClass="+annotationClass.getName());
         //获取object的class对象
         Class<?> aClass = object.getClass();
 
@@ -157,6 +166,8 @@ public class PermissionUtils {
                 } catch (InvocationTargetException e) {
                     e.printStackTrace();
                 }
+            } else {
+                Log.e(TAG, "没设置annotationClass");
             }
         }
     }
@@ -188,8 +199,6 @@ public class PermissionUtils {
             e.printStackTrace();
         }
     }
-
-
 
 
 }

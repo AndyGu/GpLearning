@@ -1,23 +1,35 @@
-if(COMPONENT_IS_LIBRARY.toBoolean()){
+if(rootProject.component_is_library){
+    println("aaa= $rootProject.component_is_library")
     apply plugin: 'com.android.library'
 }else{
+    println("bbb= $rootProject.component_is_library")
     apply plugin: 'com.android.application'
 }
 
 android {
-    compileSdkVersion COMPILE_SDK_VERSION.toInteger()
-    buildToolsVersion BUILDTOOLS_VERSION
+    compileSdkVersion rootProject.compileSdkVersion
+    buildToolsVersion rootProject.buildToolsVersion
 
     defaultConfig {
-        if(!COMPONENT_IS_LIBRARY.toBoolean()){
-            applicationId "com.bard.component"
+        if(!rootProject.component_is_library){
+            applicationId rootProject.app_appid.component // 组件化模式能独立运行才能有applicationId
         }
-        minSdkVersion MIN_SDK_VERSION as int
-        targetSdkVersion TARGET_SDK_VERSION as int
-        versionCode 1
-        versionName "1.0"
+        minSdkVersion rootProject.minSdkVersion
+        targetSdkVersion rootProject.targetSdkVersion
+        versionCode rootProject.versionCode
+        versionName rootProject.versionName
 
-        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+        testInstrumentationRunner rootProject.testInstrumentationRunner
+
+
+        // 在gradle文件中配置选项参数值（用于APT传参接收）
+        // 同学们注意：切记：必须写在defaultConfig节点下
+        javaCompileOptions {
+            annotationProcessorOptions {
+                // project.getName() == app
+                arguments = [moduleName: project.getName(), packageNameForAPT: rootProject.packageNameForAPT]
+            }
+        }
     }
 
     buildTypes {
@@ -27,12 +39,19 @@ android {
         }
     }
 
+    // 配置资源路径，方便测试环境，打包不集成到正式环境
     sourceSets {
-        main{
-            if(COMPONENT_IS_LIBRARY.toBoolean()){
-                manifest.srcFile 'src/main/manifest/AndroidManifest.xml'
-            }else{
+        main {
+            if (!rootProject.component_is_library) {
+                // 如果是组件化模式，需要单独运行时
                 manifest.srcFile 'src/main/AndroidManifest.xml'
+            } else {
+                // 集成化模式，整个项目打包apk
+                manifest.srcFile 'src/main/manifest/AndroidManifest.xml'
+                java {
+                    // release 时 debug 目录下文件不需要合并到主工程
+                    exclude '**/debug/**'
+                }
             }
         }
     }
@@ -41,13 +60,13 @@ android {
 dependencies {
     implementation fileTree(dir: 'libs', include: ['*.jar'])
 
-    implementation 'androidx.appcompat:appcompat:1.4.1'
-    implementation 'androidx.constraintlayout:constraintlayout:2.1.4'
-    testImplementation 'junit:junit:4.13.2'
-    androidTestImplementation 'androidx.test:runner:1.4.0'
-    androidTestImplementation 'androidx.test.espresso:espresso-core:3.4.0'
-    implementation project(path: ':Arouter')
+    implementation "androidx.appcompat:appcompat:$rootProject.appcompat"
+    implementation "androidx.constraintlayout:constraintlayout:$rootProject.constraintlayout"
 
-    implementation project(path: ':Annotation')
-    annotationProcessor project(path: ':Annotation_Compiler')
+    implementation project(":common")
+    // 注解模块
+    implementation project(":arouter_annotation")
+    // 注解处理器
+    annotationProcessor project(':arouter_compiler')
+
 }
