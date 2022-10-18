@@ -44,6 +44,7 @@ import android.widget.ScrollView;
 import android.widget.Toast;
 
 import com.bard.arouter_annotation.BindPath;
+import com.bard.arouter_api.RouterManager;
 import com.bard.eventbuslibrary.EventBus;
 import com.bard.eventbuslibrary.GPBean;
 import com.bard.eventbuslibrary.Subscriber;
@@ -58,6 +59,7 @@ import com.bard.gplearning.utils.MockDownloadUtils;
 import com.bard.httprequestlibrary.GPHttp;
 import com.bard.httprequestlibrary.IJsonDataTransformListener;
 import com.bard.httprequestlibrary.ResponseBean;
+import com.bard.kotlinlibrary.ChronometerActivity;
 import com.bard.netstatelibrary.NetworkManager;
 import com.bard.netstatelibrary.annotation.NetworkSubscriber;
 import com.bard.netstatelibrary.type.NetType;
@@ -310,7 +312,7 @@ private Bitmap setImageMatrix1(Bitmap bitmap) {
 
         PluginManager.getInstance().init(MainActivity.this);
 
-        findViewById(R.id.button).setOnClickListener(new View.OnClickListener() {
+        findViewById(R.id.my_btn_start).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 singleImgLoad();
@@ -319,7 +321,7 @@ private Bitmap setImageMatrix1(Bitmap bitmap) {
         });
 
 
-        findViewById(R.id.button2).setOnClickListener(new View.OnClickListener() {
+        findViewById(R.id.my_btn_stop).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 multiImgLoad();
@@ -330,9 +332,7 @@ private Bitmap setImageMatrix1(Bitmap bitmap) {
         findViewById(R.id.button3).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent();
-                intent.setClass(MainActivity.this, SecondActivity.class);
-                startActivity(intent);
+                RouterManager.getInstance().build("/app/SecondActivity").navigation(MainActivity.this);
             }
         });
 
@@ -373,9 +373,14 @@ private Bitmap setImageMatrix1(Bitmap bitmap) {
         findViewById(R.id.button8).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent();
-                intent.setClass(MainActivity.this, ThirdActivity.class);
-                startActivity(intent);
+                RouterManager.getInstance().build("/app/ThirdActivity").navigation(MainActivity.this);
+            }
+        });
+
+        findViewById(R.id.button9).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                RouterManager.getInstance().build("/Component/ComponentActivity").navigation(MainActivity.this);
             }
         });
 
@@ -436,8 +441,8 @@ private Bitmap setImageMatrix1(Bitmap bitmap) {
         findViewById(R.id.button15).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(MainActivity.this, FifthActivity.class);
-
+                Intent intent = new Intent(MainActivity.this, ChronometerActivity.class);
+                startActivity(intent);
             }
         });
 

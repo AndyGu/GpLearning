@@ -97,12 +97,13 @@ dependencies {
 
     // 公共基础库
     implementation project(":common")
-    implementation project(path: ':NetStateLibrary')
-    implementation project(path: ':EventBusLibrary')
-    implementation project(path: ':GlideLibrary')
-    implementation project(path: ':HttpRequestLibrary')
-    implementation project(path: ':PluginLibrary')
-    implementation project(path: ':WebViewlibrary')
+    implementation project(':NetStateLibrary')
+    implementation project(':EventBusLibrary')
+    implementation project(':GlideLibrary')
+    implementation project(':HttpRequestLibrary')
+    implementation project(':PluginLibrary')
+    implementation project(':WebViewlibrary')
+    implementation project(':kotlinlibrary')
 
     //  arouter 专用 注解模块
     implementation project(":arouter_annotation")
@@ -113,6 +114,7 @@ dependencies {
     if(rootProject.component_is_library){
         implementation project(':Component')
     }
+
 
     implementation 'androidx.core:core-ktx:1.7.0'
     implementation 'org.jetbrains.kotlinx:kotlinx-coroutines-core:1.6.3'

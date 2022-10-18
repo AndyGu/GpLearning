@@ -19,13 +19,13 @@
 
 
             <Button
-                android:id="@+id/button"
+                android:id="@+id/my_btn_start"
                 android:layout_width="match_parent"
                 android:layout_height="50dp"
                 android:text="修改为灰色图片" />
 
             <Button
-                android:id="@+id/button2"
+                android:id="@+id/my_btn_stop"
                 android:layout_width="match_parent"
                 android:layout_height="50dp"
                 android:text="加载10张图片" />

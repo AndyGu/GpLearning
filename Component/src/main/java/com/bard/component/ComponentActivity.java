@@ -6,6 +6,7 @@ import android.os.Bundle;
 import android.view.View;
 
 import com.bard.arouter_annotation.BindPath;
+import com.bard.arouter_api.RouterManager;
 
 @BindPath(path = "/Component/ComponentActivity")
 public class ComponentActivity extends AppCompatActivity {
@@ -19,7 +20,7 @@ public class ComponentActivity extends AppCompatActivity {
         findViewById(R.id.btn_jump).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-//                ARouter.getInstance().jumpActivity("app/Second", null);
+                RouterManager.getInstance().build("/app/SecondActivity").navigation(ComponentActivity.this);
             }
         });
 

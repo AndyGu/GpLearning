@@ -5,8 +5,8 @@ dependencies {
 
     // AS 4.3.1 ->  4.0.1 没有问题
     // As-3.4.1  +  gradle-5.1.1-all + auto-service:1.0-rc4
-    compileOnly'com.google.auto.service:auto-service:1.0'
-    annotationProcessor'com.google.auto.service:auto-service:1.0'
+    compileOnly "com.google.auto.service:auto-service:$rootProject.auto_service"
+    annotationProcessor "com.google.auto.service:auto-service:$rootProject.auto_service"
 
     // 帮助我们通过类调用的形式来生成Java代码
     implementation "com.squareup:javapoet:1.13.0"

@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.bard.kotlinlibrary">
+
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION"/>
+
+    <application>
+        <activity
+            android:name=".ServiceActivity"
+            android:exported="false" />
+        <activity
+            android:name=".ChronometerActivity"
+            android:exported="false" />
+        <activity android:name=".ViewModelActivity" />
+
+        <service android:name=".service.MyLocationService" />
+    </application>
+
+</manifest>

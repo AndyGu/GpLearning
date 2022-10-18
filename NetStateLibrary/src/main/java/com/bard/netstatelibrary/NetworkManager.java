@@ -8,6 +8,10 @@ import android.os.Build;
 
 import com.bard.netstatelibrary.core.NetworkCallbackImpl;
 
+import java.util.ArrayList;
+import java.util.HashSet;
+import java.util.LinkedList;
+
 
 //
 public class NetworkManager {
@@ -63,8 +67,6 @@ public class NetworkManager {
             }
         }
     }
-
-
 
     //注册
     public void registerObserver(Object register){
