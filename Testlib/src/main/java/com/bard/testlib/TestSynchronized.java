@@ -2,8 +2,9 @@ package com.bard.testlib;
 
 public class TestSynchronized {
 
-
-
+    /**
+     * 锁对象，与 public synchronized void innerBlockSyncA() 等价
+     */
     public void innerBlockSyncA() {
         synchronized(this) {
             int i = 5;
@@ -95,5 +96,34 @@ public class TestSynchronized {
             }
         }
     }
+}
 
+
+
+
+
+
+class SyncThread implements Runnable {
+    private static int count;
+
+    public SyncThread() {
+        count = 0;
+    }
+
+    public  void run() {
+        synchronized(this) {
+            for (int i = 0; i < 5; i++) {
+                try {
+                    System.out.println(Thread.currentThread().getName() + ":" + (count++));
+                    Thread.sleep(100);
+                } catch (InterruptedException e) {
+                    e.printStackTrace();
+                }
+            }
+        }
+    }
+
+    public int getCount() {
+        return count;
+    }
 }

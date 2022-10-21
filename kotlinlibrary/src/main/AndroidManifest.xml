@@ -3,16 +3,26 @@
     package="com.bard.kotlinlibrary">
 
     <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
-    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION"/>
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+    <uses-permission android:name="android.permission.INTERNET" />
 
     <application>
         <activity
-            android:name=".ServiceActivity"
+            android:name=".activity.LiveDataActivity"
+            android:exported="false"
+            android:label="@string/title_activity_live_data"
+            android:theme="@style/Theme.GPLearning.NoActionBar" />
+        <activity
+            android:name=".activity.ServiceActivity"
             android:exported="false" />
         <activity
-            android:name=".ChronometerActivity"
+            android:name=".activity.ChronometerActivity"
             android:exported="false" />
-        <activity android:name=".ViewModelActivity" />
+        <activity android:name=".activity.ViewModelActivity" />
+        <activity android:name=".activity.DataBindingActivity" />
+        <activity android:name=".activity.BindingAdapterActivity" />
+        <activity android:name=".activity.BindingBaseObservableActivity" />
+        <activity android:name=".activity.BindingObservableFieldActivity" />
 
         <service android:name=".service.MyLocationService" />
     </application>

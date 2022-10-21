@@ -1,21 +1,44 @@
 package com.bard.testlib;
 
+import java.util.concurrent.BlockingQueue;
+import java.util.concurrent.ExecutorService;
+import java.util.concurrent.Executors;
+import java.util.concurrent.LinkedBlockingQueue;
+import java.util.concurrent.PriorityBlockingQueue;
+import java.util.concurrent.RejectedExecutionHandler;
+import java.util.concurrent.ThreadPoolExecutor;
+import java.util.concurrent.TimeUnit;
+
 public class TestClass {
     public static void main(String[] args){
+        try {
+            Thread.sleep(1000);
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
+
         System.out.println("123--"+System.currentTimeMillis());
+
+        try {
+            Thread.sleep(1000);
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
+
 
         final TestSynchronized x = new TestSynchronized();
         final TestSynchronized y = new TestSynchronized();
 
 
         /** *
-         * 同一个实例对象x，不同的 非静态synchronized方法锁（对象锁）两个方法，
+         * 同一个实例对象x，在不同的线程，执行两个不同的 非静态synchronized方法（锁对象）
          *
          * x.isSyncA()与x.isSyncB()
          *
          * 结论：
          * 对象锁有约束（条件：同一个对象，不同的 带对象锁的 方法，【该实例的所有synchronized块】）
-         * 同一个对象，在不同的线程里，对于加锁的方法，也只能按顺序执行
+         * 同一个对象，在不同的线程里，对于所有的该对象的加锁方法，都是同步执行，不会交叉执行
+         *
          * isSyncA-test1 : 4
          * isSyncA-test1 : 3
          * isSyncA-test1 : 2
@@ -42,13 +65,14 @@ public class TestClass {
 
 
         /**
-         * 不同的实例对象x、y，调用同样的 非静态synchronized锁 方法
          *
-         * x.isSyncA()与y.isSyncA()
+         * 不同的实例对象x、y，调用同样的 非静态synchronized方法（锁对象）
+         *
+         * x.isSyncA() 与 y.isSyncA()
          *
          * 结论
          * 对象锁没有约束（条件：不同的对象，相同的 带对象锁的 方法）
-         * 对象锁只对同一实例对象有效，不同的对象不受其约束
+         * 对象锁只对同一实例对象有效，不同的对象不受其约束，两个对象各执行各的
          *
          * isSyncA-test1 : 4
          * isSyncA-test2 : 4
@@ -74,11 +98,11 @@ public class TestClass {
 
 
         /**
-         * 不同的实例对象x、y，分别调用 两个不同的static synchronized类锁 方法
+         * 不同的实例对象x、y，分别调用 两个不同的static synchronized方法（锁类对象）
          *
          * x.staticSyncA() 与 y.staticSyncB()
          *
-         * 结论：类锁具有约束（条件：不同的对象 - 不同的 带类锁的 方法）
+         * 结论：类锁具有约束（条件：不同的 带类锁的 方法, 因为静态方法也不分是 类.方法 还是 类对象.方法 了，执行效果一样）
          * 类锁 对该类的所有对象都加了锁
          *
          * staticSyncA-test1 : 4
@@ -96,6 +120,7 @@ public class TestClass {
 //        Thread test1 = new Thread(new Runnable() {
 //            public void run() {
 //                x.staticSyncA();
+////                TestSynchronized.staticSyncA();
 //            }
 //        }, "test1");
 //        Thread test2 = new Thread(new Runnable() {
@@ -111,10 +136,10 @@ public class TestClass {
          *
          * x.staticSyncA() 与 y.staticSyncA()
          *
-         * 类锁具有约束（条件：不同的对象，相同的 带类锁的 方法）
-         * 不同的对象，他们访问同一个或者不同的类锁方法，都是具有约束的
+         * 类锁具有约束（条件：相同的 带类锁的 方法）
+         * 类锁 对该类的所有对象都加了锁，何况静态方法，不同对象对静态方法来说没区别，类.方法 都能调出来
          *
-         * static synchronized 相当于内存中只有一份
+         * static synchronized 相当于内存中只有一份 对调用 都是具有约束的
          *
          * staticSyncA-test1 : 4
          * staticSyncA-test1 : 3
@@ -145,9 +170,9 @@ public class TestClass {
          *
          * x.isSyncA() 和 y.innerBlockSyncA()
          *
-         * 与实例无关，对象锁和类锁互不影响
+         * innerBlockSyncA 与 isSyncA 是等价的，都是对象锁
          *
-         * innerBlockSyncA 与 isSyncA 效果一样，都是对象锁
+         * 对象锁和类锁互不影响
          *
          * isSyncA-test1 : 4
          * innerBlockSyncA-test2 : 4
@@ -167,13 +192,30 @@ public class TestClass {
 //        }, "test1");
 //        Thread test2 = new Thread(new Runnable() {
 //            public void run() {
-////                y.innerBlockSyncA();
-//                y.innerBlockSyncA();
+////                x.innerBlockSyncA(); //有约束
+//                y.innerBlockSyncA(); //无约束
 //            }
 //        }, "test2");
 
 
-
+        /**
+         * 相同的实例x，对于对象锁 和 类锁，不会相互阻塞
+         *
+         * x.isSyncA() 和 x.staticSyncA()
+         *
+         * 由于类对象和实例对象分别拥有自己的监视器锁，因此不会相互阻塞
+         *
+         * staticSyncA-test2 : 4
+         * isSyncA-test1 : 4
+         * isSyncA-test1 : 3
+         * staticSyncA-test2 : 3
+         * staticSyncA-test2 : 2
+         * isSyncA-test1 : 2
+         * staticSyncA-test2 : 1
+         * isSyncA-test1 : 1
+         * staticSyncA-test2 : 0
+         * isSyncA-test1 : 0
+         * **/
         Thread test1 = new Thread(new Runnable() {
             public void run() {
                 x.staticSyncA();
@@ -181,14 +223,29 @@ public class TestClass {
         }, "test1");
         Thread test2 = new Thread(new Runnable() {
             public void run() {
-//                y.innerBlockSyncA();
-                x.staticSyncA();
+                x.isSyncA(); //无约束
+
+                notifyAll();
             }
         }, "test2");
 
-
         test1.start();
         test2.start();
+
+        PriorityBlockingQueue
+        LinkedBlockingQueue<Runnable> workQueue = new LinkedBlockingQueue() ;
+        ThreadPoolExecutor executor = new ThreadPoolExecutor(5,
+            10,
+            1000,
+            TimeUnit.SECONDS, new LinkedBlockingQueue<>(),
+            new RejectedExecutionHandler(){
+                @Override
+                public void rejectedExecution(Runnable r, ThreadPoolExecutor executor) {
+
+                }
+            });
+
+        ExecutorService executorService = Executors.newFixedThreadPool(3);
         /**
          *
          * 总结

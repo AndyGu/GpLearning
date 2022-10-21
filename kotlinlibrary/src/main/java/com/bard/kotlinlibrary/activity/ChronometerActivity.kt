@@ -1,9 +1,9 @@
-package com.bard.kotlinlibrary
+package com.bard.kotlinlibrary.activity
 
 import android.content.Intent
 import android.os.Bundle
-import android.view.View
 import androidx.appcompat.app.AppCompatActivity
+import com.bard.kotlinlibrary.R
 import kotlinx.android.synthetic.main.activity_test.*
 
 class ChronometerActivity: AppCompatActivity() {
@@ -21,6 +21,26 @@ class ChronometerActivity: AppCompatActivity() {
 
         btn_to_mvvm.setOnClickListener {
             startActivity(Intent(this, ViewModelActivity::class.java))
+        }
+
+        btn_to_livedata.setOnClickListener{
+            startActivity(Intent(this, LiveDataActivity::class.java))
+        }
+
+        btn_to_databinding.setOnClickListener {
+            startActivity(Intent(this, DataBindingActivity::class.java))
+        }
+
+        btn_to_bindingadapter.setOnClickListener{
+            startActivity(Intent(this, BindingAdapterActivity::class.java))
+        }
+
+        btn_to_binding_baseobservable.setOnClickListener {
+            startActivity(Intent(this, BindingBaseObservableActivity::class.java))
+        }
+
+        btn_to_binding_observablefield.setOnClickListener {
+            startActivity(Intent(this, BindingObservableFieldActivity::class.java))
         }
 
         /**

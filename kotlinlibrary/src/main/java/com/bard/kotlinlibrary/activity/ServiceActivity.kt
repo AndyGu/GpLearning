@@ -1,9 +1,10 @@
-package com.bard.kotlinlibrary
+package com.bard.kotlinlibrary.activity
 
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
+import com.bard.kotlinlibrary.R
 import com.bard.kotlinlibrary.interfaces.OnLocationChange
 import com.bard.kotlinlibrary.observer.MyLocationObserver
 import com.bard.kotlinlibrary.service.MyLocationService

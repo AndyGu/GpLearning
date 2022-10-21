@@ -1,14 +1,16 @@
-package com.bard.kotlinlibrary
+package com.bard.kotlinlibrary.activity
 
 import android.os.Bundle
 import android.util.Log
 import androidx.appcompat.app.AppCompatActivity
 import androidx.lifecycle.ViewModelProvider
+import com.bard.kotlinlibrary.R
+import com.bard.kotlinlibrary.viewmodel.MyNumberViewModel
 import kotlinx.android.synthetic.main.activity_mvvm.*
 
 class ViewModelActivity: AppCompatActivity() {
 
-    private lateinit var myViewModel : MyViewModel
+    private lateinit var myNumberViewModel : MyNumberViewModel
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -93,12 +95,13 @@ class ViewModelActivity: AppCompatActivity() {
          *
          * 这说明了 除非生命周期走到了onDestroy,ViewModelStore是不会清空的，说明它生命周期够长，也就是为什么转屏都不会变
          */
-        myViewModel = ViewModelProvider(this, ViewModelProvider.NewInstanceFactory()).get(MyViewModel::class.java)
+        myNumberViewModel = ViewModelProvider(this, ViewModelProvider.NewInstanceFactory()).get(
+            MyNumberViewModel::class.java)
 
-        tv_counter.text = "${myViewModel.number}"
+        tv_counter.text = "${myNumberViewModel.number}"
 
         btn_plus.setOnClickListener{
-            tv_counter.text = "${++myViewModel.number}"
+            tv_counter.text = "${++myNumberViewModel.number}"
         }
     }
 

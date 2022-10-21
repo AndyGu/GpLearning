@@ -45,6 +45,7 @@ suspend fun main(){
                 is OnError -> println("Error: ${it.t}")
                 is OnProgress -> println("Progress: ${it.value}")
                 is OnResult<*> -> println("Result: ${it.value}")
+                else -> {}
             }
         }
     }

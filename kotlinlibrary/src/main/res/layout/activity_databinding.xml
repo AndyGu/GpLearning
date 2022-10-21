@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+        <variable
+            name="idol"
+            type="com.bard.kotlinlibrary.bean.Idol" />
+
+        <variable
+            name="eventHandler"
+            type="com.bard.kotlinlibrary.interfaces.EventHandlerListener" />
+
+        <import type="com.bard.kotlinlibrary.utils.Utils" />
+
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <ImageView
+            android:id="@+id/iv_idol_avatar"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:scaleType="centerInside"
+            android:src="@drawable/sad"
+            app:layout_constraintBottom_toTopOf="@id/tv_idol_name"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/tv_idol_name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@{Utils.INSTANCE.getSex(idol.sex)}"
+            android:textColor="@color/design_default_color_on_secondary"
+            app:layout_constraintBottom_toTopOf="@id/tv_idol_sex"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.8"
+            tools:text="测试姓名" />
+
+        <TextView
+            android:id="@+id/tv_idol_sex"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@{idol.name}"
+            android:textColor="@color/design_default_color_on_secondary"
+            app:layout_constraintBottom_toTopOf="@id/btn_idol_event"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.8"
+            tools:text="测试性别" />
+
+        <Button
+            android:id="@+id/btn_idol_event"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:onClick="@{eventHandler::btnClick}"
+            android:text="event test"
+            app:layout_constraintBottom_toTopOf="@id/guideline"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.9" />
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/guideline"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            app:layout_constraintGuide_percent="0.5" />
+
+        <include layout="@layout/include_databinding"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            app:idol="@{idol}"
+            app:layout_constraintTop_toBottomOf="@id/guideline"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>
