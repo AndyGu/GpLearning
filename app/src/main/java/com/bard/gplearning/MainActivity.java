@@ -25,6 +25,7 @@ import android.os.AsyncTask;
 import android.os.Build;
 import android.os.Bundle;
 import android.os.Environment;
+import android.os.Handler;
 import android.os.IBinder;
 import android.os.Looper;
 import android.os.PersistableBundle;
@@ -41,10 +42,13 @@ import android.view.WindowManager;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.ScrollView;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.bard.arouter_annotation.BindPath;
 import com.bard.arouter_api.RouterManager;
+import com.bard.base.autoservice.CustomServiceLoader;
+import com.bard.common.autoservice.IWebViewService;
 import com.bard.eventbuslibrary.EventBus;
 import com.bard.eventbuslibrary.GPBean;
 import com.bard.eventbuslibrary.Subscriber;
@@ -67,6 +71,7 @@ import com.bard.netstatelibrary.type.NetType;
 import com.bard.netstatelibrary.utils.Constants;
 import com.bard.pluginlib.PluginManager;
 import com.bard.pluginlib.ProxyActivity;
+import com.bard.webview.WebViewActivity;
 
 import java.io.File;
 import java.io.IOException;
@@ -274,6 +279,7 @@ public class MainActivity extends AppCompatActivity
         scrollView_linearlayout = findViewById(R.id.scrollView_linearlayout);
 
 
+
 /*
 
 在图像的色彩处理，通常有三个维度
@@ -306,8 +312,6 @@ private Bitmap setImageMatrix1(Bitmap bitmap) {
         canvas.drawBitmap(bitmap, 0, 0, paint);
         return bmp;
 }
-
-
 
  */
 
@@ -444,6 +448,18 @@ private Bitmap setImageMatrix1(Bitmap bitmap) {
             public void onClick(View v) {
                 Intent intent = new Intent(MainActivity.this, ChronometerActivity.class);
                 startActivity(intent);
+            }
+        });
+
+
+        findViewById(R.id.button16).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                IWebViewService webviewService = CustomServiceLoader.load(IWebViewService.class);
+//                webviewService.startWebViewActivity(MainActivity.this, "https://www.baidu.com", "hello", true);
+                if (webviewService != null) {
+                    webviewService.startDemoHtml(MainActivity.this);
+                }
             }
         });
 

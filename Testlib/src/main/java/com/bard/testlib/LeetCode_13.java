@@ -22,14 +22,20 @@ import java.util.List;
  * 输入：nums = [0]
  * 输出：[]
  */
-public class LeetCode3 {
+public class LeetCode_13 {
 
     public static void main(String[] args) {
+        List<List<Integer>> lists = find(new int[]{-1, 0, 1, 2, -1, -4});
 
+        for (int i = 0; i < lists.size(); i++) {
+            for (int j = 0; j < lists.get(i).size(); j++) {
+                System.out.println("find i=" + i + " j=" + j + " value=" + lists.get(i).get(j));
+            }
+        }
     }
 
 
-    public List<List<Integer>> threeSum(int[] nums) {
+    public static List<List<Integer>> threeSum(int[] nums) {
         Arrays.sort(nums);
         List<List<Integer>> res = new ArrayList<>();
         for (int k = 0; k < nums.length - 2; k++) {

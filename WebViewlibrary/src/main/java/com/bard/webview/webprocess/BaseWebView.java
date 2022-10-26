@@ -43,7 +43,7 @@ public class BaseWebView extends WebView {
         WebViewProcessCommandDispatcher.getInstance().setContext(context);
         WebViewProcessCommandDispatcher.getInstance().initAidlConnection();
         WebViewDefaultSettings.getInstance().setSettings(this);
-        addJavascriptInterface(this, "gplearning");
+        addJavascriptInterface(this, "xiangxuewebview");
     }
 
     public void registerWebViewCallBack(WebViewCallBack webViewCallBack) {
@@ -67,7 +67,7 @@ public class BaseWebView extends WebView {
             post(new Runnable() {
                 @Override
                 public void run() {
-                    String jscode = "javascript:gplearning.callback('" + callbackname + "'," + response + ")";
+                    String jscode = "javascript:xiangxuejs.callback('" + callbackname + "'," + response + ")";
                     Log.e("xxxxxx", jscode);
                     evaluateJavascript(jscode, null);
                 }

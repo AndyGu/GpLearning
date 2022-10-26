@@ -2,6 +2,7 @@ package com.bard.kotlinlibrary.activity
 
 import android.content.Intent
 import android.os.Bundle
+import android.util.Log
 import androidx.activity.result.ActivityResult
 import androidx.activity.result.ActivityResultCallback
 import androidx.activity.result.contract.ActivityResultContracts
@@ -9,6 +10,8 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.databinding.DataBindingUtil
 import com.bard.kotlinlibrary.R
 import com.bard.kotlinlibrary.databinding.ActivityBindingAdapterBinding
+import java.util.concurrent.ExecutorService
+import java.util.concurrent.Executors
 
 class BindingAdapterActivity : AppCompatActivity() {
 

@@ -6,6 +6,7 @@ import android.content.Intent;
 import android.content.ServiceConnection;
 import android.os.IBinder;
 import android.os.RemoteException;
+import android.util.Log;
 
 import com.bard.webview.ICallbackFromMainProcessToWebProcessInterface;
 import com.bard.webview.IWebProcessToMainProcessInterface;
@@ -16,6 +17,7 @@ import com.bard.webview.mainprocess.MainProcessCommandService;
  * 这里是客户端，是WebViewActivity以及WebView所在的 process=":remoteweb"进程
  *
  * 客户端与服务端绑定时的回调，返回 IBinder 后，客户端就可以将其转换为IXXXInterface代理，通过它远程调用服务端的方法，即实现了通讯
+ *
  *
  * web进程调用 executeCommand(...)，进而调用 iWebProcessToMainProcessInterface.handleWebCommand(...)
  * 达到了：在客户端【web进程】调用服务端【主进程】的方法【handleWebCommand(...)】的目的，完成了web进程到主进程的跨越
@@ -68,12 +70,11 @@ public class WebViewProcessCommandDispatcher implements ServiceConnection {
     public void executeCommand(String commandName, String params, final BaseWebView baseWebView) {
         if(iWebProcessToMainProcessInterface != null) {
             try {
-                /**
-                 * 这里的callback是
-                 */
+                Log.e("executeCommand","commandName="+commandName+" params="+params);
                 iWebProcessToMainProcessInterface.handleWebCommand(commandName, params, new ICallbackFromMainProcessToWebProcessInterface.Stub() {
                     @Override
                     public void onResult(String callbackname, String response) throws RemoteException {
+                        Log.e("executeCommand","onResult callbackname="+callbackname+" response="+response);
                         baseWebView.handleCallback(callbackname, response);
                     }
                 });

@@ -232,7 +232,6 @@ public class TestClass {
         test1.start();
         test2.start();
 
-        PriorityBlockingQueue
         LinkedBlockingQueue<Runnable> workQueue = new LinkedBlockingQueue() ;
         ThreadPoolExecutor executor = new ThreadPoolExecutor(5,
             10,

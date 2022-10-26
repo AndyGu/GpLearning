@@ -1,0 +1,45 @@
+//指定proto的版本为proto3，不写的话默认为proto2.
+syntax = "proto3";
+//包名
+package proto;
+//引入包
+//import "";
+//指定生成类所在的Java包名
+option java_package = "com.bard.gplearning.proto";
+//重命名，如果不写，默认为文件名的首字母大写转化生成，如本文件如果不写则是Person
+option java_outer_classname = "MyPersonProto";
+
+message Person {
+  string name = 1;
+  int32 id = 2;
+  bool boo = 3;
+  string email = 4;
+  string phone = 5;
+  //repeated 相当于java 里的 List<Card>
+  repeated Card cList = 6 ;
+}
+
+message Card {
+  string cName = 1;
+}
+
+
+enum Month {
+  // The unspecified month.
+  MONTH_UNSPECIFIED = 0;
+
+  // The month of January.
+  JANUARY = 1;
+
+  // The month of February.
+  FEBRUARY = 2;
+
+  // The month of March.
+  MARCH = 3;
+
+  // The month of April.
+  APRIL = 4;
+
+  // The month of May.
+  MAY = 5;
+}

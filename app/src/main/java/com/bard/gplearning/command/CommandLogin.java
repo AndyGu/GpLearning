@@ -34,7 +34,7 @@ public class CommandLogin implements Command {
 
     @Override
     public void execute(final Map parameters, ICallbackFromMainProcessToWebProcessInterface callback) {
-        Log.d("CommandLogin", new Gson().toJson(parameters));
+        Log.e("CommandLogin", new Gson().toJson(parameters));
         if (iUserCenterService != null && !iUserCenterService.isLogined()) {
             iUserCenterService.login();
             this.callback = callback;
@@ -44,7 +44,7 @@ public class CommandLogin implements Command {
 
     @Subscribe
     public void onMessageEvent(LoginEvent event) {
-        Log.d("CommandLogin", event.userName);
+        Log.e("CommandLogin", event.userName);
         Map map = new HashMap();
         map.put("accountName", event.userName);
         if (this.callback != null) {

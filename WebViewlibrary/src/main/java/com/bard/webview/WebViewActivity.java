@@ -2,6 +2,7 @@ package com.bard.webview;
 
 import android.os.Bundle;
 import android.view.View;
+import android.widget.Toast;
 
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
@@ -37,5 +38,10 @@ public class WebViewActivity extends AppCompatActivity {
 
     public void updateTitle(String title) {
         mBinding.title.setText(title);
+    }
+
+
+    public void testToast(String msg){
+        Toast.makeText(WebViewActivity.this, msg, Toast.LENGTH_SHORT).show();
     }
 }

@@ -2,7 +2,10 @@ package com.bard.testlib;
 
 import java.util.Random;
 
-public class LeetCode2 {
+/**
+ * 合并两个链表并排序【将两个链表分别排序，然后合并成一个排序链表】
+ */
+public class LeetCode_25 {
 
     static Node chain1;
     static Node chain2;

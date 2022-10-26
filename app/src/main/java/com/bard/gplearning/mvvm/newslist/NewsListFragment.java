@@ -4,7 +4,6 @@ import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
@@ -15,7 +14,7 @@ import androidx.lifecycle.SavedStateViewModelFactory;
 import androidx.lifecycle.ViewModelProvider;
 import androidx.recyclerview.widget.LinearLayoutManager;
 
-import com.bard.gplearning.BaseApplication;
+import com.bard.gplearning.MyApplication;
 import com.bard.gplearning.R;
 import com.bard.gplearning.databinding.FragmentNewsBinding;
 import com.bard.gplearning.mvvm.base.BaseCustomViewModel;
@@ -52,7 +51,7 @@ public class NewsListFragment extends Fragment implements Observer {
         String channelId = getArguments().getString(BUNDLE_KEY_PARAM_CHANNEL_ID);
         String channelName = getArguments().getString(BUNDLE_KEY_PARAM_CHANNEL_NAME);
         viewModel = new ViewModelProvider(getActivity(),
-                new SavedStateViewModelFactory(BaseApplication.sApplication, getActivity(), getArguments()))
+                new SavedStateViewModelFactory(MyApplication.sApplication, getActivity(), getArguments()))
                     .get(channelId + channelName, NewsListViewModel.class);
 
         viewDataBinding = DataBindingUtil.inflate(inflater, R.layout.fragment_news, container, false);

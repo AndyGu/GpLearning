@@ -4,7 +4,7 @@ import android.content.ComponentName;
 import android.content.Intent;
 import android.text.TextUtils;
 
-import com.bard.gplearning.BaseApplication;
+import com.bard.gplearning.MyApplication;
 import com.bard.webview.ICallbackFromMainProcessToWebProcessInterface;
 import com.bard.webview.command.Command;
 import com.google.auto.service.AutoService;
@@ -24,9 +24,9 @@ public class CommandOpenPage implements Command {
         String targetClass = String.valueOf(parameters.get("target_class"));
         if (!TextUtils.isEmpty(targetClass)) {
             Intent intent = new Intent();
-            intent.setComponent(new ComponentName(BaseApplication.sApplication, targetClass));
+            intent.setComponent(new ComponentName(MyApplication.sApplication, targetClass));
             intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
-            BaseApplication.sApplication.startActivity(intent);
+            MyApplication.sApplication.startActivity(intent);
         }
     }
 }
