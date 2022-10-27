@@ -31,7 +31,7 @@ public class MyApplication extends BaseApplication {
 
             @Override
             public void onActivityStarted(Activity activity) {
-
+                Log.e("onActivityStarted", "activity="+activity);
             }
 
             @Override

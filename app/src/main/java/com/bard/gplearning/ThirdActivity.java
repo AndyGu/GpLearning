@@ -1,10 +1,13 @@
 package com.bard.gplearning;
 
+import android.content.Intent;
 import android.graphics.Bitmap;
 import android.os.Bundle;
 import android.os.Environment;
 import android.os.Handler;
 import android.os.Message;
+import android.util.Log;
+import android.view.View;
 import android.widget.ImageView;
 
 import androidx.annotation.Nullable;
@@ -21,7 +24,7 @@ public class ThirdActivity extends AppCompatActivity {
 
     String path = Environment.getExternalStorageDirectory().getAbsolutePath() +
             File.separator +
-            "Download/test.gif";
+            "Download/ok/test.gif";
     GifManager gifManager;
     Bitmap bitmap;
     ImageView iv_gif;
@@ -33,6 +36,10 @@ public class ThirdActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_third);
 
+        File file = new File(path);
+        Log.e("ThirdActivity", "file.exists()="+file.exists()+" path="+path);
+
+        path = "/data/data/com.bard.gplearning/files/test.gif";
         gifManager = new GifManager(path);
         int width = gifManager.getWidth();
         int height = gifManager.getHeight();
@@ -45,6 +52,14 @@ public class ThirdActivity extends AppCompatActivity {
 
         iv_gif = findViewById(R.id.iv_gif);
         iv_gif.setImageBitmap(bitmap);
+        iv_gif.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent();
+                intent.setClass(ThirdActivity.this, FourthActivity.class);
+                startActivity(intent);
+            }
+        });
     }
 
 

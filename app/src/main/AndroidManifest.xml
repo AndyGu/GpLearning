@@ -4,11 +4,11 @@
     package="com.bard.gplearning">
 
     <uses-permission android:name="android.permission.INTERNET"/>
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE"/>
     <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>
     <uses-permission android:name="android.permission.REQUEST_INSTALL_PACKAGES"/>
     <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION"/>
     <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION"/>
-
 
     <application
         android:name=".MyApplication"
@@ -18,6 +18,8 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme"
+        android:requestLegacyExternalStorage="true"
+        android:taskAffinity="com.bard.gplearning"
         tools:ignore="GoogleAppIndexingWarning">
         <activity android:name=".MainActivity"
             android:exported="true">
@@ -32,9 +34,10 @@
         <activity android:name="com.bard.pluginlib.ProxyActivity" />
         <activity android:name=".ORCActivity" />
         <activity android:name=".ThirdActivity" />
-        <activity android:name=".FourthActivity"
-            android:launchMode="singleInstance"
-            android:taskAffinity="com.gp.OpenActivity" />
+<!--        <activity android:name=".FourthActivity"-->
+<!--            android:launchMode="singleInstance"-->
+<!--            android:taskAffinity="com.gp.OpenActivity" />-->
+        <activity android:name=".FourthActivity" />
         <activity android:name=".FifthActivity"
             android:launchMode="singleInstance"/>
 
@@ -42,6 +45,7 @@
         <activity android:name=".ImmersiveActivity" />
         <activity android:name=".DisplayCutoutActivity"/>
         <activity android:name=".permissions.MyPermissionActivity" android:theme="@style/my_Transparent"/>
+        <activity android:name=".TouchActivity" />
 
         <provider
             android:name="androidx.core.content.FileProvider"

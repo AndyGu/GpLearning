@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.bard.gplearning.widgets.MyTouchViewGroupA
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/cardview_light_background"
+    android:id="@+id/ll_container">
+
+    <com.bard.gplearning.widgets.MyTouchViewGroupB
+        android:layout_width="400dp"
+        android:layout_height="400dp"
+        android:background="@color/design_default_color_primary_dark"
+        android:layout_centerInParent="true">
+
+        <com.bard.gplearning.widgets.MyTouchViewA
+            android:layout_width="200dp"
+            android:layout_height="200dp"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentStart="true"
+            android:background="@color/colorPrimary"/>
+
+        <com.bard.gplearning.widgets.MyTouchViewB
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:clickable="true"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentStart="true"
+            android:background="@color/colorAccent"/>
+
+
+
+    </com.bard.gplearning.widgets.MyTouchViewGroupB>
+</com.bard.gplearning.widgets.MyTouchViewGroupA>

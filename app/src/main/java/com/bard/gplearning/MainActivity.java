@@ -437,7 +437,7 @@ private Bitmap setImageMatrix1(Bitmap bitmap) {
         findViewById(R.id.button14).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(MainActivity.this, FourthActivity.class);
+                Intent intent = new Intent(MainActivity.this, TouchActivity.class);
                 startActivity(intent);
             }
         });

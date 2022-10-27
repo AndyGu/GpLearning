@@ -386,7 +386,7 @@ jlong openFile(JNIEnv *env, jstring jfname){
 		throwException(env, RUNTIME_EXCEPTION_BARE, "GetStringUTFChars failed");
 		return NULL_GIF_INFO;
 	}
-	FILE *file = fopen(filename, "rbe");
+	FILE *file = fopen(filename, "rb");
 	//2，so层 调用filename
 	if(file == NULL){
 		//3，so层 打开文件出现异常
