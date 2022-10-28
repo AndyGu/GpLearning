@@ -1,15 +1,41 @@
 package com.bard.gplearning
 
+import android.graphics.Color
+import android.os.Build
 import android.os.Bundle
+import android.os.Looper
+import android.os.SystemClock
 import android.util.Log
 import android.view.MotionEvent
+import androidx.annotation.RequiresApi
 import androidx.appcompat.app.AppCompatActivity
+import kotlinx.android.synthetic.main.activity_touch.*
+import kotlin.concurrent.thread
+import kotlin.random.Random
 
 class TouchActivity: AppCompatActivity() {
 
+    @RequiresApi(Build.VERSION_CODES.O)
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_touch)
+
+        thread {
+            img.setBackgroundResource(R.color.colorAccent)
+            textview.text = "thread = ${Thread.currentThread().name}"
+        }
+
+        textview.setOnClickListener{
+            it.requestLayout()
+            img.requestLayout()
+
+            thread {
+                textview.text = "${Thread.currentThread().name} - ${SystemClock.uptimeMillis()}"
+
+                val color: Color = Color.valueOf(Random.nextFloat(), Random.nextFloat(), Random.nextFloat(), 1f)
+                img.setBackgroundColor(color.toArgb())
+            }
+        }
     }
 
     override fun dispatchTouchEvent(event: MotionEvent?): Boolean {
@@ -114,10 +140,6 @@ class TouchActivity: AppCompatActivity() {
 //MyTouchViewGroupB: dispatchTouchEvent2 returnValue = true event=MotionEvent { action=ACTION_DOWN, actionButton=0, id[0]=0, x[0]=188.4375, y[0]=184.23438, toolType[0]=TOOL_TYPE_FINGER, buttonState=0, classification=NONE, metaState=0, flags=0x0, edgeFlags=0x0, pointerCount=1, historySize=0, eventTime=50858210, downTime=50858210, deviceId=2, source=0x1002, displayId=0, eventId=36424817 }
 //MyTouchViewGroupA: dispatchTouchEvent2 returnValue = true event=MotionEvent { action=ACTION_DOWN, actionButton=0, id[0]=0, x[0]=188.4375, y[0]=833.2344, toolType[0]=TOOL_TYPE_FINGER, buttonState=0, classification=NONE, metaState=0, flags=0x0, edgeFlags=0x0, pointerCount=1, historySize=0, eventTime=50858210, downTime=50858210, deviceId=2, source=0x1002, displayId=0, eventId=36424817 }
 //TouchActivity: dispatchTouchEvent2 returnValue = true event=MotionEvent { action=ACTION_DOWN, actionButton=0, id[0]=0, x[0]=188.4375, y[0]=975.2344, toolType[0]=TOOL_TYPE_FINGER, buttonState=0, classification=NONE, metaState=0, flags=0x0, edgeFlags=0x0, pointerCount=1, historySize=0, eventTime=50858210, downTime=50858210, deviceId=2, source=0x1002, displayId=0, eventId=36424817 }
-
-
-
-
 
 
 

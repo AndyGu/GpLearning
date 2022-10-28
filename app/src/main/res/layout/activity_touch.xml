@@ -30,4 +30,17 @@
 
 
     </com.bard.gplearning.widgets.MyTouchViewGroupB>
+
+    <ImageView
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:background="@color/design_default_color_secondary"
+        android:id="@+id/img" />
+
+    <TextView
+        android:id="@+id/textview"
+        android:layout_width="160dp"
+        android:layout_height="40dp"
+        android:textColor="@color/design_default_color_on_secondary"
+        android:layout_alignParentEnd="true" />
 </com.bard.gplearning.widgets.MyTouchViewGroupA>

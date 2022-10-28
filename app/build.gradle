@@ -95,7 +95,7 @@ dependencies {
     implementation 'com.rmtheis:tess-two:7.0.0'
 
     // 公共基础库
-    api project(":common")
+    implementation project(":common")
     implementation project(':NetStateLibrary')
     implementation project(':EventBusLibrary')
     implementation project(':GlideLibrary')

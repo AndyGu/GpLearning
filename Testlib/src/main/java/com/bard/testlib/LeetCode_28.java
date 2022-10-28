@@ -5,7 +5,7 @@ import java.util.Random;
 /**
  * 合并两个链表并排序【将两个链表分别排序，然后合并成一个排序链表】
  */
-public class LeetCode_25 {
+public class LeetCode_28 {
 
     static Node chain1;
     static Node chain2;

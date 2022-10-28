@@ -437,7 +437,7 @@ private Bitmap setImageMatrix1(Bitmap bitmap) {
         findViewById(R.id.button14).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(MainActivity.this, TouchActivity.class);
+                Intent intent = new Intent(MainActivity.this, FourthActivity.class);
                 startActivity(intent);
             }
         });
@@ -460,6 +460,23 @@ private Bitmap setImageMatrix1(Bitmap bitmap) {
                 if (webviewService != null) {
                     webviewService.startDemoHtml(MainActivity.this);
                 }
+            }
+        });
+
+
+        findViewById(R.id.button17).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(MainActivity.this, TouchActivity.class);
+                startActivity(intent);
+            }
+        });
+
+        findViewById(R.id.button18).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(MainActivity.this, AnimActivity.class);
+                startActivity(intent);
             }
         });
 

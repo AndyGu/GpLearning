@@ -8,7 +8,6 @@ android {
         minSdkVersion rootProject.minSdkVersion
         targetSdkVersion rootProject.targetSdkVersion
 
-        testInstrumentationRunner rootProject.testInstrumentationRunner
         consumerProguardFiles "consumer-rules.pro"
     }
 

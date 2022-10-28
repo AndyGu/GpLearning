@@ -46,6 +46,7 @@
         <activity android:name=".DisplayCutoutActivity"/>
         <activity android:name=".permissions.MyPermissionActivity" android:theme="@style/my_Transparent"/>
         <activity android:name=".TouchActivity" />
+        <activity android:name=".AnimActivity" />
 
         <provider
             android:name="androidx.core.content.FileProvider"
